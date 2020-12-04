@@ -100,6 +100,8 @@ MonoBehaviour:
   currentTime: 0
   standSpeed: 1
   standTime: 1
+  leafParticles: {fileID: 5907883980152522240, guid: fbcba7d15ef89044ea18800ee19b14ff,
+    type: 3}
 --- !u!1 &992167975193976198
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +202,8 @@ MonoBehaviour:
   currentTime: 0
   standSpeed: 1
   standTime: 1
+  leafParticles: {fileID: 5907883980152522240, guid: fbcba7d15ef89044ea18800ee19b14ff,
+    type: 3}
 --- !u!1 &992167976101230620
 GameObject:
   m_ObjectHideFlags: 0

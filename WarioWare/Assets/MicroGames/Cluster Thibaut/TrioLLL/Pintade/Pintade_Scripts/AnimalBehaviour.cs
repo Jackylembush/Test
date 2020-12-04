@@ -11,6 +11,7 @@ namespace TrioLLL
             public float standSpeed;
             public float standTime;
             private bool jumped;
+            public GameObject leafParticles;
 
             public override void Start()
             {
@@ -41,6 +42,8 @@ namespace TrioLLL
                 Vector3 originalPos = transform.position; 
 
                 float standDuration = 0;
+
+                Instantiate(leafParticles, transform);
 
                 while (standDuration < standTime)
                 {

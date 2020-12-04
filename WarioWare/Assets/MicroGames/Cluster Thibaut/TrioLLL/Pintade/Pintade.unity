@@ -229,6 +229,7 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
+  bigChoice: 0
   leftGrass: {fileID: 844047418}
   rightGrass: {fileID: 1798544103}
 --- !u!4 &1173720808
