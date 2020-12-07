@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -13,6 +14,7 @@ namespace TrioLLL
         {
             private bool rightSpawn;
             private bool leftSpawn;
+            private bool inputPressed;
 
             private int leftChoice;
             private int rightChoice;
@@ -24,18 +26,72 @@ namespace TrioLLL
             public GameObject leftArrow;
             public GameObject rightArrow;
 
+            [HideInInspector] public bool frogEaten;
+            [HideInInspector] public bool pintadeEaten;
+            [HideInInspector] public bool nothingEaten;
+
 
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
 
                 bigChoice = Random.Range(0,2);
+                Debug.Log(bigChoice);
+                inputPressed = false;
+                pintadeEaten = false;
+                frogEaten = false;
+                nothingEaten = false;
             }
 
             //FixedUpdate is called on a fixed time.
             public override void FixedUpdate()
             {
                 base.FixedUpdate(); //Do not erase this line!
+
+                if (inputPressed == false)
+                {
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        if (leftGrass.GetComponent<TouffeManager>().pintadeON == true)
+                        {
+                            pintadeEaten = true;
+                        }
+                        else if (leftGrass.GetComponent<TouffeManager>().pintadeON == false)
+                        {
+                            if (leftGrass.GetComponent<TouffeManager>().frogON == true)
+                            {
+                                frogEaten = true;
+                            }
+                            else if (leftGrass.GetComponent<TouffeManager>().frogON == false)
+                            {
+                                nothingEaten = true;
+                            }
+                        }
+
+                        inputPressed = true;
+                    }
+
+                    if (Input.GetKey(KeyCode.RightArrow))
+                    {
+                        if (rightGrass.GetComponent<TouffeManager>().pintadeON == true)
+                        {
+                            pintadeEaten = true;
+                        }
+                        else if (rightGrass.GetComponent<TouffeManager>().pintadeON == false)
+                        {
+                            if (rightGrass.GetComponent<TouffeManager>().frogON == true)
+                            {
+                                frogEaten = true;
+                            }
+                            else if (rightGrass.GetComponent<TouffeManager>().frogON == false)
+                            {
+                                nothingEaten = true;
+                            }
+                        }
+
+                        inputPressed = true;
+                    }
+                }
 
             }
 
@@ -97,6 +153,34 @@ namespace TrioLLL
                 {
                     leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
                     rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                }
+
+                if (Tick == 8)
+                {
+                    if (pintadeEaten == false && frogEaten == false && nothingEaten == false)
+                    {
+                        nothingEaten = true;
+                    }
+
+                    if (pintadeEaten == true)
+                    {
+                        Manager.Instance.Result(true);
+                    }
+                    else if (frogEaten == true)
+                    {
+                        Manager.Instance.Result(false);
+                    }
+                    else if (nothingEaten == true)
+                    {
+                        if (leftGrass.GetComponent<TouffeManager>().pintadeON == true || rightGrass.GetComponent<TouffeManager>().pintadeON == true)
+                        {
+                            Manager.Instance.Result(false);
+                        }
+                        else
+                        {
+                            Manager.Instance.Result(true);
+                        }
+                    }
                 }
             }
         }

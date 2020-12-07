@@ -66,6 +66,18 @@ namespace TrioLLL
                         frog.SetActive(true); 
                     }
                 }
+
+                if (Tick == 6)
+                {
+                    if (pintadeON == true)
+                    {
+                        Debug.Log("pintadeON");
+                    }
+                    if (frogON == true)
+                    {
+                        Debug.Log("frogON");
+                    }
+                }
             }
 
             IEnumerator Shake(float magnitude, float duration)
@@ -87,22 +99,6 @@ namespace TrioLLL
                 }
 
                 transform.position = originalPos;
-            }
-
-            private void AnimalReveal(GameObject frog, GameObject pintade)
-            {
-                choice = Random.Range(0,2);
-
-                switch (choice)
-                {
-                    case 0:
-                        pintade.SetActive(true);
-                        break;
-
-                    case 1:
-                        frog.SetActive(true);
-                        break;
-                }
             }
         }
     }
