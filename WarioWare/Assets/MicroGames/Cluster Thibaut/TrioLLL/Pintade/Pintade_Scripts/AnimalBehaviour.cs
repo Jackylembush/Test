@@ -6,6 +6,9 @@ namespace TrioLLL
 {
     namespace Pintade
     {
+        /// <summary>
+        /// VIDAL Luc
+        /// </summary>
         public class AnimalBehaviour : TimedBehaviour
         {
             public float standSpeed;
@@ -27,7 +30,7 @@ namespace TrioLLL
                 {
                     jumped = true;
 
-                    StartCoroutine(Reveal());
+                    Instantiate(leafParticles, transform);
                 }
             }
 
@@ -35,24 +38,6 @@ namespace TrioLLL
             public override void TimedUpdate()
             {
 
-            }
-
-            IEnumerator Reveal()
-            {
-                Vector3 originalPos = transform.position; 
-
-                float standDuration = 0;
-
-                Instantiate(leafParticles, transform);
-
-                while (standDuration < standTime)
-                {
-                    transform.position = new Vector3(originalPos.x, originalPos.y + standSpeed, originalPos.z);
-
-                    standDuration += Time.deltaTime;
-
-                    yield return new WaitForSeconds(0.05f);
-                }
             }
         }
     }

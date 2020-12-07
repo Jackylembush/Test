@@ -6,6 +6,9 @@ namespace TrioLLL
 {
     namespace Pintade
     {
+        /// <summary>
+        /// VIDAL Luc
+        /// </summary>
         public class PintadeGlobalManager : TimedBehaviour
         {
             private bool rightSpawn;
@@ -16,7 +19,10 @@ namespace TrioLLL
             public int bigChoice;
 
             public GameObject leftGrass;
-            public GameObject rightGrass; 
+            public GameObject rightGrass;
+
+            public GameObject leftArrow;
+            public GameObject rightArrow;
 
 
             public override void Start()
@@ -36,6 +42,8 @@ namespace TrioLLL
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
+                Debug.Log(Tick);
+
                 if (Tick == 2)
                 {
                     if (bigChoice == 0)
@@ -68,6 +76,7 @@ namespace TrioLLL
                     if (rightChoice == 1)
                     {
                         rightGrass.GetComponent<TouffeManager>().pintadeON = true;
+
                     }
                     else if (rightChoice == 2)
                     {
@@ -82,6 +91,12 @@ namespace TrioLLL
                     {
                         leftGrass.GetComponent<TouffeManager>().frogON = true;
                     }
+                }
+
+                if (Tick == 4)
+                {
+                    leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                    rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
                 }
             }
         }

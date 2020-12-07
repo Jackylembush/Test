@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: ID_Pintade
   m_EditorClassIdentifier: 
   cluster: 2
-  trio: Brigantin
-  aptiqueChal: 0
+  trio: LLL
+  haptiqueChal: 0
   inputChal: 0
+  indexEnum: 0
+  verbe: Visez la Pintade
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 62f158d430b69db49b3829418873778b, type: 3}
     required: 0
     buildIndex: 2
+  currentDifficulty: 0

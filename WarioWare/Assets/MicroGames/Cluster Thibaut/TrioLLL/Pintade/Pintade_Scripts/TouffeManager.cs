@@ -16,6 +16,7 @@ namespace TrioLLL
 
             public GameObject frog;
             public GameObject pintade;
+            public GameObject animalsParent;
 
             [HideInInspector] public int choice;
             [HideInInspector] public bool pintadeON;
@@ -42,7 +43,7 @@ namespace TrioLLL
             {
                 base.TimedUpdate();
 
-                if(Tick <= 4)
+                if(Tick <= 3)
                 {
                     StartCoroutine(Shake(magnitude, duration));
                 }
@@ -52,14 +53,16 @@ namespace TrioLLL
                     choice = Random.Range(1, 3);
                 }
 
-                if (Tick == 5)
+                if (Tick == 4)
                 {
                     if (pintadeON == true)
                     {
+                        animalsParent.SetActive(true);
                         pintade.SetActive(true);
                     }
                     else if (frogON == true)
                     {
+                        animalsParent.SetActive(true);
                         frog.SetActive(true); 
                     }
                 }
