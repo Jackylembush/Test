@@ -51,9 +51,9 @@ namespace TrioLLL
             {
                 base.FixedUpdate(); //Do not erase this line!
 
-                if (inputPressed == false && inputActivated == true)
+                if (inputPressed == false && leftInputActivated == true || rightInputActivated == true)
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow))
+                    if (Input.GetKey(KeyCode.LeftArrow) && leftInputActivated == true)
                     {
                         if (leftGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
@@ -74,7 +74,7 @@ namespace TrioLLL
                         inputPressed = true;
                     }
 
-                    if (Input.GetKey(KeyCode.RightArrow))
+                    if (Input.GetKey(KeyCode.RightArrow) && rightInputActivated == true)
                     {
                         if (rightGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
