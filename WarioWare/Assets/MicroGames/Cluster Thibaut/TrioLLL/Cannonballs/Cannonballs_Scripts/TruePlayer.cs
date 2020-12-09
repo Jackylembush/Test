@@ -4,31 +4,35 @@ using UnityEngine;
 
 namespace TrioLLL
 {
-    namespace CannonBalls
+    namespace Cannonballs
+
     {
-        public class PlayerController : MonoBehaviour
+        public class TruePlayer : TimedBehaviour
         {
-
-
             [SerializeField]
             private float speed;
             [SerializeField]
             private float speedModifier;
-
             private Rigidbody2D rb;
-
-            // Start is called before the first frame update
-            void Start()
+            public override void Start()
             {
+                base.Start(); //Do not erase this line!
                 rb = GetComponent<Rigidbody2D>();
             }
 
-            // Update is called once per frame
-            void Update()
+            //FixedUpdate is called on a fixed time.
+            public override void FixedUpdate()
             {
+
+                base.FixedUpdate(); //Do not erase this line!
                 Move();
             }
 
+            //TimedUpdate is called once every tick.
+            public override void TimedUpdate()
+            {
+
+            }
             private void Move()
             {
 
