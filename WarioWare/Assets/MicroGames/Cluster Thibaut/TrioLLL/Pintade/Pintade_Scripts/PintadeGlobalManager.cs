@@ -12,10 +12,9 @@ namespace TrioLLL
         /// </summary>
         public class PintadeGlobalManager : TimedBehaviour
         {
-            private bool rightSpawn;
-            private bool leftSpawn;
             private bool inputPressed;
-            private bool inputActivated;
+            private bool leftInputActivated;
+            private bool rightInputActivated;
 
             private int leftChoice;
             private int rightChoice;
@@ -42,7 +41,9 @@ namespace TrioLLL
                 pintadeEaten = false;
                 frogEaten = false;
                 nothingEaten = false;
-                inputActivated = false;
+                leftInputActivated = false;
+                leftChoice = 10;
+                rightChoice = 10;
             }
 
             //FixedUpdate is called on a fixed time.
@@ -104,58 +105,73 @@ namespace TrioLLL
 
                 if (Tick == 2)
                 {
-                    if (bigChoice == 0)
+                    switch (currentDifficulty)
                     {
-                        leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
+                        case Manager.Difficulty.EASY:
+                            EasyTouffeChoice();
+                            break;
 
-                        if (leftChoice == 1)
-                        {
-                            rightChoice = 2;
-                        }
-                        else if (leftChoice == 2)
-                        {
-                            rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
-                        }
-                    }
-                    else if (bigChoice == 1)
-                    {
-                        rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
+                        case Manager.Difficulty.MEDIUM:
+                            MediumAndHardTouffeChoice();
+                            break;
 
-                        if (rightChoice == 1)
-                        {
-                            leftChoice = 2;
-                        }
-                        else if (rightChoice == 2)
-                        {
-                            leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
-                        }
-                    }
-
-                    if (rightChoice == 1)
-                    {
-                        rightGrass.GetComponent<TouffeManager>().pintadeON = true;
-
-                    }
-                    else if (rightChoice == 2)
-                    {
-                        rightGrass.GetComponent<TouffeManager>().frogON = true;
-                    }
-
-                    if (leftChoice == 1)
-                    {
-                        leftGrass.GetComponent<TouffeManager>().pintadeON = true;
-                    }
-                    else if (leftChoice == 2)
-                    {
-                        leftGrass.GetComponent<TouffeManager>().frogON = true;
+                        case Manager.Difficulty.HARD:
+                            MediumAndHardTouffeChoice();
+                            break;
                     }
                 }
 
-                if (Tick == 4)
+                switch (currentDifficulty)
                 {
-                    leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
-                    rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
-                    inputActivated = true;
+                    case Manager.Difficulty.EASY:
+                        if (Tick == 4)
+                        {
+                            leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                            rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                            leftInputActivated = true;
+                            rightInputActivated = true;
+                        }
+                        break;
+
+                    case Manager.Difficulty.MEDIUM:
+                        if (Tick == 4)
+                        {
+                            leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                            rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                            leftInputActivated = true;
+                            rightInputActivated = true;
+                        }
+                        break;
+
+                    case Manager.Difficulty.HARD:
+                        if (Tick == 3)
+                        {
+                            if (bigChoice == 1)
+                            {
+                                rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                rightInputActivated = true;
+                            }
+                            else if (bigChoice == 0)
+                            {
+                                leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                leftInputActivated = true;
+                            }
+                        }
+
+                        if (Tick == 5)
+                        {
+                            if (bigChoice == 1)
+                            {
+                                leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                leftInputActivated = true;
+                            }
+                            else if (bigChoice == 0)
+                            {
+                                rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                rightInputActivated = true;
+                            }
+                        }
+                        break;
                 }
 
                 if (Tick == 8)
@@ -184,6 +200,87 @@ namespace TrioLLL
                             Manager.Instance.Result(true);
                         }
                     }
+                }
+            }
+
+            private void EasyTouffeChoice()
+            {
+                if (bigChoice == 0)
+                {
+                    leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
+                }
+
+                else if (bigChoice == 1)
+                {
+                    rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
+                }
+
+                if (rightChoice == 1)
+                {
+                    rightGrass.GetComponent<TouffeManager>().pintadeON = true;
+
+                }
+                else if (rightChoice == 2)
+                {
+                    rightGrass.GetComponent<TouffeManager>().frogON = true;
+                }
+
+                if (leftChoice == 1)
+                {
+                    leftGrass.GetComponent<TouffeManager>().pintadeON = true;
+                }
+                else if (leftChoice == 2)
+                {
+                    leftGrass.GetComponent<TouffeManager>().frogON = true;
+                }
+            }
+
+            private void MediumAndHardTouffeChoice()
+            {
+                if (bigChoice == 0)
+                {
+                    leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
+
+                    if (leftChoice == 1)
+                    {
+                        rightChoice = 2;
+                    }
+                    else if (leftChoice == 2)
+                    {
+                        rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
+                    }
+                }
+                else if (bigChoice == 1)
+                {
+                    rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
+
+                    if (rightChoice == 1)
+                    {
+                        leftChoice = 2;
+                    }
+                    else if (rightChoice == 2)
+                    {
+                        leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
+                    }
+                }
+
+                if (rightChoice == 1)
+                {
+                    rightGrass.GetComponent<TouffeManager>().pintadeON = true;
+
+                }
+                else if (rightChoice == 2)
+                {
+                    rightGrass.GetComponent<TouffeManager>().frogON = true;
+                }
+
+                if (leftChoice == 1)
+                {
+                    leftGrass.GetComponent<TouffeManager>().pintadeON = true;
+                }
+                else if (leftChoice == 2)
+                {
+                    leftGrass.GetComponent<TouffeManager>().frogON = true;
                 }
             }
         }

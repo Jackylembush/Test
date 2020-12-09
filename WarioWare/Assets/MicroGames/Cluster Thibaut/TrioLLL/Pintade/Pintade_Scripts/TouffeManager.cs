@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -17,6 +18,9 @@ namespace TrioLLL
             public GameObject frog;
             public GameObject pintade;
             public GameObject animalsParent;
+            public GameObject manager;
+            public int side;
+
 
             [HideInInspector] public int choice;
             [HideInInspector] public bool pintadeON;
@@ -43,28 +47,114 @@ namespace TrioLLL
             {
                 base.TimedUpdate();
 
-                if(Tick <= 3)
-                {
-                    StartCoroutine(Shake(magnitude, duration));
-                }
-
                 if(Tick == 1)
                 {
                     choice = Random.Range(1, 3);
                 }
 
-                if (Tick == 4)
+                switch (currentDifficulty)  //Shake des Touffes.
                 {
-                    if (pintadeON == true)
-                    {
-                        animalsParent.SetActive(true);
-                        pintade.SetActive(true);
-                    }
-                    else if (frogON == true)
-                    {
-                        animalsParent.SetActive(true);
-                        frog.SetActive(true); 
-                    }
+                    case Manager.Difficulty.EASY:
+                        if (Tick <= 3)
+                        {
+                            StartCoroutine(Shake(magnitude, duration));
+                        }
+                        break;
+
+                    case Manager.Difficulty.MEDIUM:
+                        if (Tick <= 3)
+                        {
+                            StartCoroutine(Shake(magnitude, duration));
+                        }
+                        break;
+
+                    case Manager.Difficulty.HARD:
+                        if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
+                        {
+                            if (Tick <= 2)
+                            {
+                                StartCoroutine(Shake(magnitude, duration));
+                            }
+                        }
+                        else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
+                        {
+                            if (Tick <= 4)
+                            {
+                                StartCoroutine(Shake(magnitude, duration));
+                            }
+                        }
+                        break;
+                }
+
+
+                switch (currentDifficulty)
+                {
+                    case Manager.Difficulty.EASY:
+                        if (Tick == 4)
+                        {
+                            if (pintadeON == true)
+                            {
+                                animalsParent.SetActive(true);
+                                pintade.SetActive(true);
+                            }
+                            else if (frogON == true)
+                            {
+                                animalsParent.SetActive(true);
+                                frog.SetActive(true);
+                            }
+                        }
+                        break;
+
+                    case Manager.Difficulty.MEDIUM:
+                        if (Tick == 4)
+                        {
+                            if (pintadeON == true)
+                            {
+                                animalsParent.SetActive(true);
+                                pintade.SetActive(true);
+                            }
+                            else if (frogON == true)
+                            {
+                                animalsParent.SetActive(true);
+                                frog.SetActive(true);
+                            }
+                        }
+                        break;
+
+                    case Manager.Difficulty.HARD:
+                        if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
+                        {
+                            if (Tick == 3)
+                            {
+                                if (pintadeON == true)
+                                {
+                                    animalsParent.SetActive(true);
+                                    pintade.SetActive(true);
+                                }
+                                else if (frogON == true)
+                                {
+                                    animalsParent.SetActive(true);
+                                    frog.SetActive(true);
+                                }
+                            }
+                        }
+                        else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
+                        {
+                            if (Tick == 5)
+                            {
+                                if (pintadeON == true)
+                                {
+                                    animalsParent.SetActive(true);
+                                    pintade.SetActive(true);
+                                }
+                                else if (frogON == true)
+                                {
+                                    animalsParent.SetActive(true);
+                                    frog.SetActive(true);
+                                }
+                            }
+                        }
+                        break;
                 }
 
                 if (Tick == 6)
@@ -80,7 +170,7 @@ namespace TrioLLL
                 }
             }
 
-            IEnumerator Shake(float magnitude, float duration)
+            IEnumerator Shake(float magnitude, float duration) //Coroutine de Shake des Touffes.
             {
 
                 Vector3 originalPos = transform.localPosition;
