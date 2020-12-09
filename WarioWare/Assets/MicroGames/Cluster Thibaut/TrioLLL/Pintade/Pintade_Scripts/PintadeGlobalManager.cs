@@ -15,6 +15,7 @@ namespace TrioLLL
             private bool rightSpawn;
             private bool leftSpawn;
             private bool inputPressed;
+            private bool inputActivated;
 
             private int leftChoice;
             private int rightChoice;
@@ -41,6 +42,7 @@ namespace TrioLLL
                 pintadeEaten = false;
                 frogEaten = false;
                 nothingEaten = false;
+                inputActivated = false;
             }
 
             //FixedUpdate is called on a fixed time.
@@ -48,7 +50,7 @@ namespace TrioLLL
             {
                 base.FixedUpdate(); //Do not erase this line!
 
-                if (inputPressed == false)
+                if (inputPressed == false && inputActivated == true)
                 {
                     if (Input.GetKey(KeyCode.LeftArrow))
                     {
@@ -153,6 +155,7 @@ namespace TrioLLL
                 {
                     leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
                     rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                    inputActivated = true;
                 }
 
                 if (Tick == 8)
