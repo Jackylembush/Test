@@ -253,16 +253,11 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  duration: 0.25
-  magnitude: 0.25
   frog: {fileID: 992167975091128840}
   pintade: {fileID: 992167975193976198}
   animalsParent: {fileID: 7817999243805432107}
   manager: {fileID: 0}
   side: 0
-  grass1: {fileID: 5604460109860957289}
-  grass2: {fileID: 2552557628493470189}
-  grass3: {fileID: 2874349293329345978}
   choice: 0
   pintadeON: 0
   frogON: 0
@@ -417,7 +412,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5853538079092348310, guid: b57c55bd73edf9444864f850c6820fe1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
