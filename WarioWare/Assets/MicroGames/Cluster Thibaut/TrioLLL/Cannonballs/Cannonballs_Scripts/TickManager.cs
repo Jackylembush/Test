@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -33,7 +34,7 @@ namespace TrioLLL
                         if (!gabarit.isPlayerOut) win=false;
                     }
                     Debug.Log(win);
-                    //Manager.Instance.Result(win);
+                    Manager.Instance.Result(win);
                 }
             }
         }
