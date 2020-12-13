@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -20,8 +21,11 @@ namespace TrioLLL
             public bool rightArmIsActivated = false;
             public bool canUseLeftArm = true;
             public bool canUseRightArm = true;
-
-            public EnemyLife enemyLife; 
+            private AudioSource source;
+            public AudioClip leftPunch;
+            public AudioClip rightPunch;
+            public EnemyLifeSystem enemyLife;
+            public bool gameIsOver;
 
             public override void Start()
             {
@@ -31,6 +35,8 @@ namespace TrioLLL
                 rightActivatedArm.SetActive(false);
                 leftActivateddArm.SetActive(false);
                 hitDuration = 60 / bpm / 5;
+                source = GetComponent<AudioSource>();
+                gameIsOver = GetComponent<EnemyLifeSystem>().gameFinished;
             }
 
             public override void FixedUpdate()
@@ -40,40 +46,43 @@ namespace TrioLLL
 
             public void Update()
             {
-                if (Input.GetButtonDown("Left_Bumper") && canUseLeftArm)
+                if (!gameIsOver)
                 {
-                    StartCoroutine(ActivationLeftArm());
-                }
+                    if (Input.GetButtonDown("Left_Bumper") && canUseLeftArm)
+                    {
+                        StartCoroutine(ActivationLeftArm());
+                    }
 
-                if (Input.GetButtonDown("Right_Bumper") && canUseRightArm)
-                {
-                    StartCoroutine(ActivationRightArm());
-                }
+                    if (Input.GetButtonDown("Right_Bumper") && canUseRightArm)
+                    {
+                        StartCoroutine(ActivationRightArm());
+                    }
 
-                if (leftArmIsActivated == true)
-                {
-                    leftActivateddArm.SetActive(true);
-                    leftRestedArm.SetActive(false);
-                    canUseLeftArm = false;
-                }
-                else
-                {
-                    leftActivateddArm.SetActive(false);
-                    leftRestedArm.SetActive(true);
-                    canUseLeftArm = true;
-                }
+                    if (leftArmIsActivated == true)
+                    {
+                        leftActivateddArm.SetActive(true);
+                        leftRestedArm.SetActive(false);
+                        canUseLeftArm = false;
+                    }
+                    else
+                    {
+                        leftActivateddArm.SetActive(false);
+                        leftRestedArm.SetActive(true);
+                        canUseLeftArm = true;
+                    }
 
-                if (rightArmIsActivated == true)
-                {
-                    rightActivatedArm.SetActive(true);
-                    rightRestedArm.SetActive(false);
-                    canUseRightArm = false;
-                }
-                else
-                {
-                    rightActivatedArm.SetActive(false);
-                    rightRestedArm.SetActive(true);
-                    canUseRightArm = true;
+                    if (rightArmIsActivated == true)
+                    {
+                        rightActivatedArm.SetActive(true);
+                        rightRestedArm.SetActive(false);
+                        canUseRightArm = false;
+                    }
+                    else
+                    {
+                        rightActivatedArm.SetActive(false);
+                        rightRestedArm.SetActive(true);
+                        canUseRightArm = true;
+                    }
                 }
             }
 
@@ -81,6 +90,7 @@ namespace TrioLLL
             {
                 leftArmIsActivated = true;
                 enemyLife.Damage();
+                source.PlayOneShot(leftPunch);
                 yield return new WaitForSeconds(hitDuration);
                 leftArmIsActivated = false;
             }
@@ -89,6 +99,7 @@ namespace TrioLLL
             {
                 rightArmIsActivated = true;
                 enemyLife.Damage();
+                source.PlayOneShot(rightPunch);
                 yield return new WaitForSeconds(hitDuration);
                 rightArmIsActivated = false;
             }

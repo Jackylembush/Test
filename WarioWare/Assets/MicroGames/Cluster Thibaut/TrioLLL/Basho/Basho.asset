@@ -17,7 +17,9 @@ MonoBehaviour:
   haptiqueChal: 0
   inputChal: 0
   indexEnum: 0
+  verbe: Frappe !
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 33c6109aede51ef499077dd2a758d634, type: 3}
     required: 0
-    buildIndex: -1
+    buildIndex: 2
+  currentDifficulty: 0
