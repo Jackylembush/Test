@@ -51,7 +51,7 @@ namespace TrioLLL
             {
                 base.FixedUpdate(); //Do not erase this line!
 
-                if (inputPressed == false && leftInputActivated == true || rightInputActivated == true)
+                if (inputPressed == false && leftInputActivated == true || rightInputActivated == true && inputPressed == false)
                 {
                     if (Input.GetKey(KeyCode.LeftArrow) && leftInputActivated == true)
                     {
