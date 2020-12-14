@@ -50,8 +50,9 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  baseSpeed: 0.9
-  speedModifier: 4
+  baseSpeed: 4.9
+  speedModifier: 0
+  bpmDiviser: 30
   Player: {fileID: 3292392492318861227, guid: b51e62d4fdeb1304b95264c4de2a26c0, type: 3}
   isPlayerOut: 1
   randomized: 0

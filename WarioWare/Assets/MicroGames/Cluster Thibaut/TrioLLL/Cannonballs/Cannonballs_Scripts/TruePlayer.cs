@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -13,9 +14,12 @@ namespace TrioLLL
             private float speed;
             [SerializeField]
             private float speedModifier;
+            [SerializeField]
+            private float bpmDiviser;
             private Rigidbody2D rb;
             public override void Start()
             {
+                speedModifier = bpm/bpmDiviser ;
                 base.Start(); //Do not erase this line!
                 rb = GetComponent<Rigidbody2D>();
             }

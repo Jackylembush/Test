@@ -12,6 +12,8 @@ namespace TrioLLL
             private float baseSpeed;
             [SerializeField]
             private float speedModifier;
+            [SerializeField]
+            private float bpmDiviser;
             public GameObject Player;
             private Rigidbody2D rb;
             public bool isPlayerOut = true;
@@ -24,6 +26,7 @@ namespace TrioLLL
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
+                speedModifier = bpm / bpmDiviser;
                 rb = GetComponent<Rigidbody2D>();
                 nextPosition = new Vector2(Random.Range(min_x, max_x), Random.Range(min_y, max_y));
             }

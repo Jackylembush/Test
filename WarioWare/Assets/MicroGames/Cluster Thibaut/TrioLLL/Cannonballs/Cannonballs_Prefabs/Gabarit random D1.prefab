@@ -51,14 +51,15 @@ MonoBehaviour:
   timer: 0
   currentTime: 0
   baseSpeed: 0.2
-  speedModifier: 1
+  speedModifier: 0
+  bpmDiviser: 60
   Player: {fileID: 3292392492318861227, guid: b51e62d4fdeb1304b95264c4de2a26c0, type: 3}
   isPlayerOut: 1
   randomized: 1
-  min_x: -20
-  max_x: 20
-  min_y: -10
-  max_y: 10
+  min_x: -12
+  max_x: 12
+  min_y: -8
+  max_y: 8
   nextPosition: {x: 0, y: 0}
 --- !u!50 &2107419889193704348
 Rigidbody2D:
