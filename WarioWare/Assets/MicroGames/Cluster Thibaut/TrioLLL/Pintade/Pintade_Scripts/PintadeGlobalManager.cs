@@ -107,15 +107,15 @@ namespace TrioLLL
                 {
                     switch (currentDifficulty)
                     {
-                        case Manager.Difficulty.EASY:
+                        case Difficulty.EASY:
                             EasyTouffeChoice();
                             break;
 
-                        case Manager.Difficulty.MEDIUM:
+                        case Difficulty.MEDIUM:
                             MediumAndHardTouffeChoice();
                             break;
 
-                        case Manager.Difficulty.HARD:
+                        case Difficulty.HARD:
                             MediumAndHardTouffeChoice();
                             break;
                     }
@@ -123,7 +123,7 @@ namespace TrioLLL
 
                 switch (currentDifficulty)
                 {
-                    case Manager.Difficulty.EASY:
+                    case Difficulty.EASY:
                         if (Tick == 4)
                         {
                             leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
@@ -133,7 +133,7 @@ namespace TrioLLL
                         }
                         break;
 
-                    case Manager.Difficulty.MEDIUM:
+                    case Difficulty.MEDIUM:
                         if (Tick == 4)
                         {
                             leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
@@ -143,7 +143,7 @@ namespace TrioLLL
                         }
                         break;
 
-                    case Manager.Difficulty.HARD:
+                    case Difficulty.HARD:
                         if (Tick == 3)
                         {
                             if (bigChoice == 1)
