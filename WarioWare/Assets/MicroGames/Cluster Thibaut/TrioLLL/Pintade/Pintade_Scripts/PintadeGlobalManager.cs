@@ -26,6 +26,8 @@ namespace TrioLLL
             public GameObject leftArrow;
             public GameObject rightArrow;
 
+            public GameObject servalManager;
+
             [HideInInspector] public bool frogEaten;
             [HideInInspector] public bool pintadeEaten;
             [HideInInspector] public bool nothingEaten;
@@ -53,17 +55,21 @@ namespace TrioLLL
 
                 if (inputPressed == false && leftInputActivated == true || rightInputActivated == true && inputPressed == false)
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow) && leftInputActivated == true)
+                    if (Input.GetKey(KeyCode.LeftArrow) && leftInputActivated == true || Input.GetButton("X_Button") && leftInputActivated == true)
                     {
                         if (leftGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
                             pintadeEaten = true;
+                            servalManager.GetComponent<ServalManager>().leftActivated = true;
+                            servalManager.GetComponent<ServalManager>().happyServal = true;
                         }
                         else if (leftGrass.GetComponent<TouffeManager>().pintadeON == false)
                         {
                             if (leftGrass.GetComponent<TouffeManager>().frogON == true)
                             {
                                 frogEaten = true;
+                                servalManager.GetComponent<ServalManager>().leftActivated = true;
+                                servalManager.GetComponent<ServalManager>().sickServal = true;
                             }
                             else if (leftGrass.GetComponent<TouffeManager>().frogON == false)
                             {
@@ -74,17 +80,21 @@ namespace TrioLLL
                         inputPressed = true;
                     }
 
-                    if (Input.GetKey(KeyCode.RightArrow) && rightInputActivated == true)
+                    if (Input.GetKey(KeyCode.RightArrow) && rightInputActivated == true || Input.GetButton("B_Button") && rightInputActivated == true)
                     {
                         if (rightGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
                             pintadeEaten = true;
+                            servalManager.GetComponent<ServalManager>().rightActivated = true;
+                            servalManager.GetComponent<ServalManager>().happyServal = true;
                         }
                         else if (rightGrass.GetComponent<TouffeManager>().pintadeON == false)
                         {
                             if (rightGrass.GetComponent<TouffeManager>().frogON == true)
                             {
                                 frogEaten = true;
+                                servalManager.GetComponent<ServalManager>().rightActivated = true;
+                                servalManager.GetComponent<ServalManager>().sickServal = true;
                             }
                             else if (rightGrass.GetComponent<TouffeManager>().frogON == false)
                             {
