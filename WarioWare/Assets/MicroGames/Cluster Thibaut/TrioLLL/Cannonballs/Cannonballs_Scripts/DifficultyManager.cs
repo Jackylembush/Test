@@ -15,20 +15,20 @@ namespace TrioLLL
             public GameObject GabaritRandomD1;
             public GameObject GabaritRandomD2;
             public GameObject GabaritFollow;
-            public Vector3 PositionOffset;
+            public GameObject GabaritPosition;
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
                 switch (currentDifficulty)
                 {
-                    case Testing.Manager.Difficulty.EASY:
+                    case Difficulty.EASY:
                         Instantiate(GabaritRandomD1, Player.transform.position, Quaternion.identity);
                         break;
-                    case Testing.Manager.Difficulty.MEDIUM:
+                    case Difficulty.MEDIUM:
                         Instantiate(GabaritRandomD2, Player.transform.position, Quaternion.identity);
-                        Instantiate(GabaritFollow, PositionOffset, Quaternion.identity);
+                        Instantiate(GabaritFollow, GabaritPosition.transform.position, Quaternion.identity);
                         break;
-                    case Testing.Manager.Difficulty.HARD:
+                    case Difficulty.HARD:
                         Instantiate(GabaritRandomD2, Player.transform.position, Quaternion.identity);
                         Instantiate(GabaritFollow, Player.transform.position, Quaternion.identity);
                         break;

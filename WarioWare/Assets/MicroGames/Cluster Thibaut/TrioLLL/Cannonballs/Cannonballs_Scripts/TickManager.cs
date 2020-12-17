@@ -9,11 +9,11 @@ namespace TrioLLL
     {
         public class TickManager : TimedBehaviour
         {
-            private Gabarit[] gabarits;
+            private TrioLLL.Cannonballs.Gabarits[] gabarits;
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
-                gabarits = FindObjectsOfType<Gabarit>();
+                gabarits = FindObjectsOfType<TrioLLL.Cannonballs.Gabarits>();
             }
 
             //FixedUpdate is called on a fixed time.
@@ -29,7 +29,7 @@ namespace TrioLLL
                 if (Tick == 8) 
                 {
                     bool win = true;
-                    foreach (Gabarit gabarit in gabarits)
+                    foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)
                     {
                         if (!gabarit.isPlayerOut) win=false;
                     }

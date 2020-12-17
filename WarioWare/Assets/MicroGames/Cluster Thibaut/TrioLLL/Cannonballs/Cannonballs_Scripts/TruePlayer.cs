@@ -40,8 +40,8 @@ namespace TrioLLL
             private void Move()
             {
 
-                float inputHorizontal = Input.GetAxis("Right_Joystick_X");
-                float inputVertical = Input.GetAxis("Right_Joystick_Y");
+                float inputHorizontal = Input.GetAxis("Left_Joystick_X");
+                float inputVertical = Input.GetAxis("Left_Joystick_Y");
                 rb.velocity = new Vector2(inputHorizontal, inputVertical).normalized * (speed * speedModifier);
             }
         }

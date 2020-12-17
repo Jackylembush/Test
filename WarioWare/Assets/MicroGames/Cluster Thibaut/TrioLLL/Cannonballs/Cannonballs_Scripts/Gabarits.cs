@@ -6,7 +6,7 @@ namespace TrioLLL
 {
     namespace Cannonballs
     {
-        public class TrueGabarits : TimedBehaviour
+        public class Gabarits : TimedBehaviour
         {
             [SerializeField]
             private float baseSpeed;
@@ -29,6 +29,7 @@ namespace TrioLLL
                 speedModifier = bpm / bpmDiviser;
                 rb = GetComponent<Rigidbody2D>();
                 nextPosition = new Vector2(Random.Range(min_x, max_x), Random.Range(min_y, max_y));
+                Player = GameObject.FindGameObjectWithTag("Player");
             }
 
             //FixedUpdate is called on a fixed time.

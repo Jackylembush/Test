@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7812062708568942606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  baseSpeed: 4.9
+  baseSpeed: 1.5
   speedModifier: 0
   bpmDiviser: 30
   Player: {fileID: 3292392492318861227, guid: b51e62d4fdeb1304b95264c4de2a26c0, type: 3}
