@@ -27,13 +27,13 @@ namespace TrioLLL
 
                 switch (currentDifficulty)
                 {
-                    case Manager.Difficulty.EASY:
+                    case Difficulty.EASY:
                         enemyLife = 12;
                         break;
-                    case Manager.Difficulty.MEDIUM:
+                    case Difficulty.MEDIUM:
                         enemyLife = 15;
                         break;
-                    case Manager.Difficulty.HARD:
+                    case Difficulty.HARD:
                         enemyLife = 17;
                         break;
                 }
@@ -45,6 +45,7 @@ namespace TrioLLL
                 if (enemyLife <= 0)
                 {
                     victory = true;
+                    Manager.Instance.Result(victory);
                 }
             }
 

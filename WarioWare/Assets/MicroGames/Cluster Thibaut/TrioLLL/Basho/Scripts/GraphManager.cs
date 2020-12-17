@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Testing;
+using UnityEngine.UIElements;
 
 namespace TrioLLL
 {
@@ -12,12 +13,12 @@ namespace TrioLLL
         /// </summary>
         public class GraphManager : TimedBehaviour
         {
-            public SpriteRenderer backgroundLevel1;
-            public SpriteRenderer backgroundLevel2;
-            public SpriteRenderer backgroundLevel3;
-            public SpriteRenderer bossLevel1;
-            public SpriteRenderer bossLevel2;
-            public SpriteRenderer bossLevel3;
+            public GameObject backgroundLevel1;
+            public GameObject backgroundLevel2;
+            public GameObject backgroundLevel3;
+            public GameObject bossLevel1;
+            public GameObject bossLevel2;
+            public GameObject bossLevel3;
 
             public override void Start()
             {
@@ -25,17 +26,17 @@ namespace TrioLLL
 
                 switch (currentDifficulty)
                 {
-                    case Manager.Difficulty.EASY:
-                        this.backgroundLevel1 = GetComponent<SpriteRenderer>();
-                        this.bossLevel1 = GetComponent<SpriteRenderer>();
+                    case Difficulty.EASY:
+                        backgroundLevel1.SetActive(true);
+                        bossLevel1.SetActive(true);
                         break;
-                    case Manager.Difficulty.MEDIUM:
-                        this.backgroundLevel2 = GetComponent<SpriteRenderer>();
-                        this.bossLevel2 = GetComponent<SpriteRenderer>();
+                    case Difficulty.MEDIUM:
+                        backgroundLevel2.SetActive(true);
+                        bossLevel2.SetActive(true);
                         break;
-                    case Manager.Difficulty.HARD:
-                        this.backgroundLevel3 = GetComponent<SpriteRenderer>();
-                        this.bossLevel3 = GetComponent<SpriteRenderer>();
+                    case Difficulty.HARD:
+                        backgroundLevel3.SetActive(true);
+                        bossLevel3.SetActive(true);
                         break;
                 }
             }
