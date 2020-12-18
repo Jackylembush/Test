@@ -55,7 +55,7 @@ namespace TrioLLL
 
                 if (inputPressed == false && leftInputActivated == true || rightInputActivated == true && inputPressed == false)
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow) && leftInputActivated == true || Input.GetButton("X_Button") && leftInputActivated == true)
+                    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetButton("X_Button"))
                     {
                         if (leftGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
@@ -80,7 +80,7 @@ namespace TrioLLL
                         inputPressed = true;
                     }
 
-                    if (Input.GetKey(KeyCode.RightArrow) && rightInputActivated == true || Input.GetButton("B_Button") && rightInputActivated == true)
+                    if (Input.GetKey(KeyCode.RightArrow) || Input.GetButton("B_Button"))
                     {
                         if (rightGrass.GetComponent<TouffeManager>().pintadeON == true)
                         {
