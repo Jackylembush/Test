@@ -16,6 +16,8 @@ namespace TrioLLL
             public GameObject rightRestedArm;
             public GameObject leftActivateddArm;
             public GameObject rightActivatedArm;
+            public ParticleSystem leftPunchFX;
+            public ParticleSystem rightPunchFX;
             public float hitDuration;
             public bool leftArmIsActivated = false;
             public bool rightArmIsActivated = false;
@@ -90,6 +92,7 @@ namespace TrioLLL
             {
                 leftArmIsActivated = true;
                 enemyLife.Damage();
+                leftPunchFX.Play();
                 source.PlayOneShot(leftPunch);
                 yield return new WaitForSeconds(hitDuration);
                 leftArmIsActivated = false;
@@ -99,6 +102,7 @@ namespace TrioLLL
             {
                 rightArmIsActivated = true;
                 enemyLife.Damage();
+                rightPunchFX.Play();
                 source.PlayOneShot(rightPunch);
                 yield return new WaitForSeconds(hitDuration);
                 rightArmIsActivated = false;

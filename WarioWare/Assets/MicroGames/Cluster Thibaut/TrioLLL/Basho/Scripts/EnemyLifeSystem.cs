@@ -13,7 +13,7 @@ namespace TrioLLL
         public class EnemyLifeSystem : TimedBehaviour
         {
             [HideInInspector]public float enemyLife;
-            private bool victory = false;
+            public bool victory = false;
             private AudioSource source;
             public AudioClip victoryClip;
             public AudioClip failClip;
@@ -45,7 +45,6 @@ namespace TrioLLL
                 if (enemyLife <= 0)
                 {
                     victory = true;
-                    Manager.Instance.Result(victory);
                 }
             }
 
@@ -54,9 +53,23 @@ namespace TrioLLL
                 base.TimedUpdate();
                 if (Tick == 8)
                 {
-                    Manager.Instance.Result(victory);
                     gameFinished = true;
-                    source.PlayOneShot(victoryClip);
+                    Manager.Instance.Result(victory);
+                }
+            }
+
+            public void Update()
+            {
+                if (gameFinished)
+                {
+                    if (victory)
+                    {
+                        source.PlayOneShot(victoryClip);
+                    }
+                    else
+                    {
+                        source.PlayOneShot(failClip);
+                    }
                 }
             }
         }
