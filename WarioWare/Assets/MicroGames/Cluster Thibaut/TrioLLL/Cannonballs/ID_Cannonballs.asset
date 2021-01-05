@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cluster: 2
   trio: LLL
-  haptiqueChal: 0
-  inputChal: 0
   indexEnum: 0
   verbe: Evite le boulet!
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 94c2badfe49d0844fa4a6ec2312f8875, type: 3}
     required: 0
     buildIndex: 2
+  inputs: {fileID: 0}
   currentDifficulty: 0
+  idWeight: 0
+  hasBarrel: 0
