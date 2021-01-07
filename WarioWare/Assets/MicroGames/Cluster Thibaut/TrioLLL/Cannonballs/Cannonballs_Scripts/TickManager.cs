@@ -26,7 +26,7 @@ namespace TrioLLL
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
-                if (Tick == 8) 
+                if (Tick == 7) 
                 {
                     bool win = true;
                     foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)

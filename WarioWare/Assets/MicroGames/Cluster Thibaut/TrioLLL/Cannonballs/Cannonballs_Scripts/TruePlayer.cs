@@ -34,7 +34,14 @@ namespace TrioLLL
             {
 
                 base.FixedUpdate(); //Do not erase this line!
-                Move();
+                if (Tick < 7)
+                {
+                    Move();
+                }
+                if (Tick >= 7)
+                {
+                    rb.velocity = new Vector2(0, 0);
+                }
 
             }
 

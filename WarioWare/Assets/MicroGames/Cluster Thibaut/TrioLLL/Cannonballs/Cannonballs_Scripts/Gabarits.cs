@@ -18,13 +18,15 @@ namespace TrioLLL
             private Rigidbody2D rb;
             public bool isPlayerOut = true;
             public bool randomized = false;
-            public float min_x = -20f;
-            public float max_x = 20f;
-            public float min_y = -10f;
-            public float max_y = 10f;
+            public float min_x = -15f;
+            public float max_x = 15f;
+            public float min_y = -5f;
+            public float max_y = 5f;
             public Vector2 nextPosition;
+            public GameObject Explosion;
             public override void Start()
             {
+                Explosion.SetActive(false);
                 base.Start(); //Do not erase this line!
                 speedModifier = bpm / bpmDiviser;
                 rb = GetComponent<Rigidbody2D>();
@@ -36,13 +38,20 @@ namespace TrioLLL
             public override void FixedUpdate()
             {
                 base.FixedUpdate(); //Do not erase this line!
-                Move();
+                if (Tick < 7)
+                {
+                    Move();
+                }
+
             }
 
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
-
+                if (Tick == 7)
+                {
+                    Explosion.SetActive(true);
+                }
             }
 
             private void Move()
