@@ -158,13 +158,39 @@ namespace TrioLLL
                         {
                             if (bigChoice == 1)
                             {
-                                rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
-                                rightInputActivated = true;
+                                if (rightChoice == 1 && leftChoice == 2)
+                                {
+                                    leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    leftInputActivated = true;
+                                }
+                                else if (leftChoice == 1 && rightChoice == 2)
+                                {
+                                    rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    rightInputActivated = true;
+                                }
+                                else if (leftChoice == 2 && rightChoice == 2)
+                                {
+                                    rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    rightInputActivated = true;
+                                }
                             }
                             else if (bigChoice == 0)
                             {
-                                leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
-                                leftInputActivated = true;
+                                if (leftChoice == 1 && rightChoice == 2)
+                                {
+                                    rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    rightInputActivated = true;
+                                }
+                                else if (rightChoice == 1 && leftChoice == 2)
+                                {
+                                    leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    leftInputActivated = true;
+                                }
+                                else if (leftChoice == 2 && rightChoice == 2)
+                                {
+                                    leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
+                                    leftInputActivated = true;
+                                }
                             }
                         }
 
@@ -254,10 +280,12 @@ namespace TrioLLL
                     if (leftChoice == 1)
                     {
                         rightChoice = 2;
+                        bigChoice = 1;
                     }
                     else if (leftChoice == 2)
                     {
                         rightChoice = rightGrass.GetComponent<TouffeManager>().choice;
+                        bigChoice = 0;
                     }
                 }
                 else if (bigChoice == 1)
@@ -267,10 +295,12 @@ namespace TrioLLL
                     if (rightChoice == 1)
                     {
                         leftChoice = 2;
+                        bigChoice = 0;
                     }
                     else if (rightChoice == 2)
                     {
                         leftChoice = leftGrass.GetComponent<TouffeManager>().choice;
+                        bigChoice = 1;
                     }
                 }
 
