@@ -38,7 +38,7 @@ namespace TrioLLL
                 leftActivateddArm.SetActive(false);
                 hitDuration = 60 / bpm / 5;
                 source = GetComponent<AudioSource>();
-                gameIsOver = GetComponent<EnemyLifeSystem>().gameFinished;
+                gameIsOver = GetComponent<GraphManager>().endOfTheGame;
             }
 
             public override void FixedUpdate()
@@ -48,6 +48,7 @@ namespace TrioLLL
 
             public void Update()
             {
+                gameIsOver = GetComponent<GraphManager>().endOfTheGame;
                 if (!gameIsOver)
                 {
                     if (Input.GetButtonDown("Left_Bumper") && canUseLeftArm)

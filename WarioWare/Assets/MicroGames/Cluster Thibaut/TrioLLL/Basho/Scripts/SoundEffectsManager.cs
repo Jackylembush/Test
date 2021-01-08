@@ -42,6 +42,8 @@ namespace TrioLLL
                         music.PlayOneShot(musicLevel3);
                         mainSource.PlayOneShot(bossLevel3Entry);
                         break;
+                    default:
+                        throw new System.Exception("enum not checked!");
                 }
             }
         }

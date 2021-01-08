@@ -25,16 +25,15 @@ namespace TrioLLL
             public GameObject bossLevel2Hand;
             public GameObject bossLevel3Hand;
             public ParticleSystem confusedEnemy;
-            private float bossLife;
-            private bool gameIsWon;
-
+            public EnemyLifeSystem enemyLifeSys;
+            [HideInInspector] public bool endOfTheGame;
+            [HideInInspector] public float bossLife;
             public override void Start()
             {
-                bossLife = GetComponent<EnemyLifeSystem>().enemyLife;
-                gameIsWon = GetComponent<EnemyLifeSystem>().victory;
+                bossLife = enemyLifeSys.currentEnemyLife;
                 base.Start();
+                endOfTheGame = false;
 
-                    Debug.Log("ça passe ici");
                 switch (currentDifficulty)
                 {
                     case Difficulty.EASY:
@@ -54,8 +53,11 @@ namespace TrioLLL
             public override void TimedUpdate()
             {
                 base.TimedUpdate();
-                if (Tick >= 7 && bossLife <= 0)
+                bossLife = enemyLifeSys.currentEnemyLife;
+
+                if (bossLife <= 0)
                 {
+                    endOfTheGame = true;
                     confusedEnemy.Play();
                     switch (currentDifficulty)
                     {
@@ -73,26 +75,27 @@ namespace TrioLLL
                             break;
                     }
                 }
-                else if (Tick >= 7 && bossLife > 0)
+                else if (bossLife > 0)
                 {
-                    switch (currentDifficulty)
+                    if(Tick > 7)
                     {
-                        case Difficulty.EASY:
-                            bossLevel1.SetActive(false);
-                            bossLevel1Hand.SetActive(true);
-                            break;
-                        case Difficulty.MEDIUM:
-                            bossLevel2.SetActive(false);
-                            bossLevel2Hand.SetActive(true);
-                            break;
-                        case Difficulty.HARD:
-                            bossLevel3.SetActive(false);
-                            bossLevel3Hand.SetActive(true);
-                            break;
+                        endOfTheGame = true;
+                        switch (currentDifficulty)
+                        {
+                            case Difficulty.EASY:
+                                bossLevel1.SetActive(false);
+                                bossLevel1Hand.SetActive(true);
+                                break;
+                            case Difficulty.MEDIUM:
+                                bossLevel2.SetActive(false);
+                                bossLevel2Hand.SetActive(true);
+                                break;
+                            case Difficulty.HARD:
+                                bossLevel3.SetActive(false);
+                                bossLevel3Hand.SetActive(true);
+                                break;
+                        }
                     }
-                }
-                if (Tick == 7)
-                {
                 }
             }
         }
