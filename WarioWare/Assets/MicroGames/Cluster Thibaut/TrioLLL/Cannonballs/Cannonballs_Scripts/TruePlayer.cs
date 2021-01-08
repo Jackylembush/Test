@@ -20,7 +20,9 @@ namespace TrioLLL
             private Animator animator;
             public GameObject Face;
             public GameObject Dos;
-            
+            public AudioClip footPrints;
+            public TrioLLL.Cannonballs.Soundmanager Audiomanager;
+
             public override void Start()
             {
                 animator = gameObject.GetComponent<Animator>();
@@ -63,6 +65,7 @@ namespace TrioLLL
                     animator.SetBool("RunNorth", true);
                     animator.SetBool("RunSouth", false);
                     animator.SetBool("Immobile", false);
+                    Audiomanager.PlayFootPrints(footPrints);
                 }
                 if (inputVertical < 0)
                 {
@@ -71,6 +74,7 @@ namespace TrioLLL
                     animator.SetBool("RunNorth",false);
                     animator.SetBool("RunSouth",true);
                     animator.SetBool("Immobile",false);
+                    Audiomanager.PlayFootPrints(footPrints);
                 }
                 if (inputVertical == 0 && inputVertical == 0)
                 {
@@ -79,6 +83,7 @@ namespace TrioLLL
                     animator.SetBool("Immobile",true);
                     animator.SetBool("RunNorth", false);
                     animator.SetBool("RunSouth", false);
+                    Audiomanager.StopFootPrints();
                 }
             }
 

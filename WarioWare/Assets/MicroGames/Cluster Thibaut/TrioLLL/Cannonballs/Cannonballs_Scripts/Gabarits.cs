@@ -24,6 +24,11 @@ namespace TrioLLL
             public float max_y = 5f;
             public Vector2 nextPosition;
             public GameObject Explosion;
+            public AudioClip boom;
+            public AudioClip splatter;
+            public TrioLLL.Cannonballs.Soundmanager Audiomanager;
+            public float volumeBoom =1f;
+            public float volumeSplatter =1f;
             public override void Start()
             {
                 Explosion.SetActive(false);
@@ -51,6 +56,7 @@ namespace TrioLLL
                 if (Tick == 7)
                 {
                     Explosion.SetActive(true);
+                    Audiomanager.PlaySFX(boom,volumeBoom);
                 }
             }
 
@@ -78,7 +84,13 @@ namespace TrioLLL
             private void OnTriggerStay2D(Collider2D collision)
             {
                 if (collision.tag == "Player")
+                {
+                    Audiomanager.PlaySFX(splatter, volumeSplatter);
                     isPlayerOut = false;
+                    
+                }
+
+
                 else return;
             }
             private void OnTriggerExit2D(Collider2D collision)

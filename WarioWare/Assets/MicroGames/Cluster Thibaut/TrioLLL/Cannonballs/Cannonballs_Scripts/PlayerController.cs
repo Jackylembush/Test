@@ -8,8 +8,7 @@ namespace TrioLLL
     {
         public class PlayerController : MonoBehaviour
         {
-
-
+            public AudioClip footPrints;
             [SerializeField]
             private float speed;
             [SerializeField]

@@ -5,7 +5,7 @@ using Testing;
 
 namespace TrioLLL
 {
-    namespace CannonBalls
+    namespace Cannonballs
     {
         public class TickManager : TimedBehaviour
         {
