@@ -22,6 +22,8 @@ namespace TrioLLL
             public GameObject Dos;
             public AudioClip footPrints;
             public TrioLLL.Cannonballs.Soundmanager Audiomanager;
+            private TrioLLL.Cannonballs.Gabarits[] gabarits;
+            private bool hasExploded = false;
 
             public override void Start()
             {
@@ -29,6 +31,7 @@ namespace TrioLLL
                 speedModifier = bpm/bpmDiviser ;
                 base.Start(); //Do not erase this line!
                 rb = GetComponent<Rigidbody2D>();
+                gabarits = FindObjectsOfType<TrioLLL.Cannonballs.Gabarits>();
             }
 
             //FixedUpdate is called on a fixed time.
@@ -43,7 +46,21 @@ namespace TrioLLL
                 if (Tick >= 7)
                 {
                     rb.velocity = new Vector2(0, 0);
+                    
+                    foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)
+                    {
+                        if (!gabarit.isPlayerOut && !hasExploded)
+                        {
+                            Face.SetActive(true);
+                            Dos.SetActive(false);
+                            Debug.Log("animation explosion");
+                            Debug.Log(Tick);
+                            animator.SetBool("Boom", true);
+                            hasExploded = true;
+                        }
+                    }
                 }
+
 
             }
 
@@ -67,7 +84,7 @@ namespace TrioLLL
                     animator.SetBool("Immobile", false);
                     Audiomanager.PlayFootPrints(footPrints);
                 }
-                if (inputVertical < 0)
+                if (inputVertical <= 0)
                 {
                     Face.SetActive(true);
                     Dos.SetActive(false);

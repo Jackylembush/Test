@@ -48,6 +48,10 @@ namespace TrioLLL
                     Move();
                 }
 
+                if (Tick >= 7)
+                {
+                    rb.velocity = new Vector2(0, 0);
+                }
             }
 
             //TimedUpdate is called once every tick.
@@ -56,7 +60,7 @@ namespace TrioLLL
                 if (Tick == 7)
                 {
                     Explosion.SetActive(true);
-                    Audiomanager.PlaySFX(boom,volumeBoom);
+                    //Audiomanager.PlaySFX(boom,volumeBoom);
                 }
             }
 
@@ -85,7 +89,7 @@ namespace TrioLLL
             {
                 if (collision.tag == "Player")
                 {
-                    Audiomanager.PlaySFX(splatter, volumeSplatter);
+                    //Audiomanager.PlaySFX(splatter, volumeSplatter);
                     isPlayerOut = false;
                     
                 }
