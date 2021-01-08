@@ -65,6 +65,9 @@ namespace TrioLLL
                 if (Tick == 7.2)
                 {
                     gameFinished = true;
+                }
+                if (Tick == 8)
+                {
                     Manager.Instance.Result(victory);
                 }
             }
