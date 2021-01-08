@@ -51,7 +51,7 @@ namespace TrioLLL
                 switch (currentDifficulty)
                 {
                     case Difficulty.EASY:
-                        if (Tick == 4)
+                        if (Tick == 5)
                         {
                             if (pintadeON == true)
                             {
@@ -67,7 +67,7 @@ namespace TrioLLL
                         break;
 
                     case Difficulty.MEDIUM:
-                        if (Tick == 4)
+                        if (Tick == 5)
                         {
                             if (pintadeON == true)
                             {
@@ -85,7 +85,7 @@ namespace TrioLLL
                     case Difficulty.HARD:
                         if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick == 3)
+                            if (Tick == 4)
                             {
                                 if (pintadeON == true)
                                 {
@@ -101,7 +101,7 @@ namespace TrioLLL
                         }
                         else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick == 5)
+                            if (Tick == 6)
                             {
                                 if (pintadeON == true)
                                 {

@@ -40,14 +40,14 @@ namespace TrioLLL
                 switch (currentDifficulty)  //Shake des Touffes.
                 {
                     case Difficulty.EASY:
-                        if (Tick <= 3)
+                        if (Tick <= 4)
                         {
                             StartCoroutine(Shake(magnitude, duration));
                         }
                         break;
 
                     case Difficulty.MEDIUM:
-                        if (Tick <= 3)
+                        if (Tick <= 4)
                         {
                             StartCoroutine(Shake(magnitude, duration));
                         }
@@ -56,14 +56,14 @@ namespace TrioLLL
                     case Difficulty.HARD:
                         if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick <= 2)
+                            if (Tick <= 3)
                             {
                                 StartCoroutine(Shake(magnitude, duration));
                             }
                         }
                         else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick <= 4)
+                            if (Tick <= 5)
                             {
                                 StartCoroutine(Shake(magnitude, duration));
                             }

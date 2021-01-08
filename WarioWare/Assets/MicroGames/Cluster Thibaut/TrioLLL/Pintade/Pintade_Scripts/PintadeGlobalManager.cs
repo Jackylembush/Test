@@ -134,7 +134,7 @@ namespace TrioLLL
                 switch (currentDifficulty)
                 {
                     case Difficulty.EASY:
-                        if (Tick == 4)
+                        if (Tick == 5)
                         {
                             leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
                             rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
@@ -144,7 +144,7 @@ namespace TrioLLL
                         break;
 
                     case Difficulty.MEDIUM:
-                        if (Tick == 4)
+                        if (Tick == 5)
                         {
                             leftArrow.GetComponent<ArrowInputBehaviour>().activated = true;
                             rightArrow.GetComponent<ArrowInputBehaviour>().activated = true;
@@ -154,7 +154,7 @@ namespace TrioLLL
                         break;
 
                     case Difficulty.HARD:
-                        if (Tick == 3)
+                        if (Tick == 4)
                         {
                             if (bigChoice == 1)
                             {
@@ -194,7 +194,7 @@ namespace TrioLLL
                             }
                         }
 
-                        if (Tick == 5)
+                        if (Tick == 6)
                         {
                             if (bigChoice == 1)
                             {
