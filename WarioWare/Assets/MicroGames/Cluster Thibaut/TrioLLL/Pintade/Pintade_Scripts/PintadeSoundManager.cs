@@ -6,6 +6,9 @@ namespace TrioLLL
 {
     namespace Pintade
     {
+        /// <summary>
+        /// VIDAL Luc
+        /// </summary>
         public class PintadeSoundManager : TimedBehaviour
         {
             [HideInInspector] public bool grass1;
