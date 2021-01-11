@@ -76,7 +76,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 15.998, y: 13.601815}
+  m_Size: {x: 5.69, y: 4.843}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -92,7 +92,7 @@ Animator:
   m_GameObject: {fileID: 4692354296401037414}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 613b40659475d244dac6aae90171636b, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -162,6 +162,8 @@ MonoBehaviour:
   leftHappyServal: {fileID: 4692354296401037414}
   rightHappyServal: {fileID: 4692354296714107518}
   servalBack: {fileID: 4692354297927390297}
+  leftAnimalParent: {fileID: 0}
+  rightAnimalParent: {fileID: 0}
 --- !u!1 &4692354296579877026
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +243,7 @@ SpriteRenderer:
   m_Size: {x: 15.998954, y: 13.878}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4692354296579877027
@@ -342,7 +344,7 @@ SpriteRenderer:
   m_Size: {x: 15.997043, y: 13.601}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4692354296714107519
@@ -355,7 +357,7 @@ Animator:
   m_GameObject: {fileID: 4692354296714107518}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5624448c14eb13b45aacc4ac8d509890, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -443,7 +445,7 @@ SpriteRenderer:
   m_Size: {x: 16.066786, y: 13.877999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4692354297385406758
@@ -456,7 +458,7 @@ Animator:
   m_GameObject: {fileID: 4692354297385406761}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c86796ab8325d6488f81ad84c28a9b0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -543,6 +545,6 @@ SpriteRenderer:
   m_Size: {x: 4.7910004, y: 12.253472}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
