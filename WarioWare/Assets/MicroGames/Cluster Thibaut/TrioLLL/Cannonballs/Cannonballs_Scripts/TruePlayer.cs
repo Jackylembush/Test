@@ -23,9 +23,6 @@ namespace TrioLLL
             public AudioClip footPrints;
             public AudioClip boom;
             public AudioClip splatter;
-            public float footPrintVolume =1f;
-            public float boomVolume =1f;
-            public float splatterVolume =1f;
             public TrioLLL.Cannonballs.Soundmanager Audiomanager;
             private TrioLLL.Cannonballs.Gabarits[] gabarits;
             private bool hasExploded = false;
@@ -55,13 +52,14 @@ namespace TrioLLL
                 {
 
                     rb.velocity = new Vector2(0, 0);
-                   
+                    if (hasExploded == false)
+                    {
+                        Audiomanager.PlaySFX(boom, 1);
+
+                    }
                     foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)
                     {
-                        if (hasExploded == false)
-                        {
-                            Audiomanager.PlaySFX(boom, boomVolume);
-                        }
+
                         if (!gabarit.isPlayerOut && !hasExploded)
                         {
                             Face.SetActive(true);
@@ -70,9 +68,10 @@ namespace TrioLLL
                             Debug.Log(Tick);
                             animator.SetBool("Boom", true);
                             hasExploded = true;
-                            Audiomanager.PlaySFX(splatter, splatterVolume);
+                            Audiomanager.PlaySFX(splatter,1);
                         }
                     }
+
 
                 }
 
@@ -143,7 +142,7 @@ namespace TrioLLL
             }
             IEnumerator FootPrints()
             {
-                Audiomanager.PlayFootPrints(footPrints,footPrintVolume);
+                Audiomanager.PlayFootPrints(footPrints,1);
                 yield return new WaitForSeconds(0.3f);
                 footprintOn = false;
             }

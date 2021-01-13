@@ -32,6 +32,24 @@ namespace TrioLLL
                 sfxSource.loop = true;
 
                 //PlayMusic(musiqueSpeed1);
+                if (bpm == 60)
+                {
+                    PlayMusic(musiqueSpeed1);
+
+                }
+                else if (bpm == 80)
+                {
+                    PlayMusic(musiqueSpeed2);
+                }
+                else if (bpm == 100)
+                {
+                    PlayMusic(musiqueSpeed3);
+                }
+                else if (bpm == 120)
+                {
+                    PlayMusic(musiqueSpeed4);
+                }
+
             }
 
             //FixedUpdate is called on a fixed time.
