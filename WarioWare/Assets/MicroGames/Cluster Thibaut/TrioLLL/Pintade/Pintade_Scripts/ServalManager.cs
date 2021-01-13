@@ -23,6 +23,9 @@ namespace TrioLLL
             public GameObject servalBack;
             public GameObject leftAnimalParent;
             public GameObject rightAnimalParent;
+            public GameObject servalJumpLeft;
+            public GameObject servalJumpRight;
+            public float time;
 
             public override void Start()
             {
@@ -44,15 +47,11 @@ namespace TrioLLL
                 {
                     if (sickServal == true)
                     {
-                        leftSickServal.SetActive(true);
-                        servalBack.SetActive(false);
-                        leftAnimalParent.SetActive(false);
+                        StartCoroutine(SickLeft());
                     }
                     else if (happyServal == true)
                     {
-                        leftHappyServal.SetActive(true);
-                        servalBack.SetActive(false);
-                        leftAnimalParent.SetActive(false);
+                        StartCoroutine(HappyLeft());
                     }
 
                     jumped = true;
@@ -61,15 +60,11 @@ namespace TrioLLL
                 {
                     if (sickServal == true)
                     {
-                        rightSickServal.SetActive(true);
-                        servalBack.SetActive(false);
-                        rightAnimalParent.SetActive(false);
+                        StartCoroutine(SickRight());
                     }
                     else if (happyServal == true)
                     {
-                        rightHappyServal.SetActive(true);
-                        servalBack.SetActive(false);
-                        rightAnimalParent.SetActive(false);
+                        StartCoroutine(HappyRight());
                     }
 
                     jumped = true;
@@ -81,6 +76,54 @@ namespace TrioLLL
             public override void TimedUpdate()
             {
 
+            }
+
+            IEnumerator SickLeft ()
+            {
+                servalBack.SetActive(false);
+                servalJumpLeft.SetActive(true);
+
+                yield return new WaitForSeconds(time);
+
+                servalJumpLeft.SetActive(false);
+                leftSickServal.SetActive(true);
+                leftAnimalParent.SetActive(false);
+            }
+
+            IEnumerator HappyLeft ()
+            {
+                servalBack.SetActive(false);
+                servalJumpLeft.SetActive(true);
+
+                yield return new WaitForSeconds(time);
+
+                servalJumpLeft.SetActive(false);
+                leftHappyServal.SetActive(true);
+                leftAnimalParent.SetActive(false);
+            }
+
+            IEnumerator SickRight ()
+            {
+                servalBack.SetActive(false);
+                servalJumpRight.SetActive(true);
+
+                yield return new WaitForSeconds(time);
+
+                servalJumpRight.SetActive(false);
+                rightSickServal.SetActive(true);
+                rightAnimalParent.SetActive(false);
+            }
+
+            IEnumerator HappyRight ()
+            {
+                servalBack.SetActive(false);
+                servalJumpRight.SetActive(true);
+
+                yield return new WaitForSeconds(time);
+
+                servalJumpRight.SetActive(false);
+                rightHappyServal.SetActive(true);
+                rightAnimalParent.SetActive(false);
             }
         }
     }

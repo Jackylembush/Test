@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5646063615597841668}
   - component: {fileID: 3876475826822755859}
   m_Layer: 0
-  m_Name: ServalQuiSauteGauche
+  m_Name: ServalQuiSauteDroite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,6 +348,9 @@ MonoBehaviour:
   servalBack: {fileID: 4692354297927390297}
   leftAnimalParent: {fileID: 0}
   rightAnimalParent: {fileID: 0}
+  servalJumpLeft: {fileID: 9143839419636839544}
+  servalJumpRight: {fileID: 1842769185174904254}
+  time: 0.075
 --- !u!1 &4692354297927390297
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +645,7 @@ GameObject:
   - component: {fileID: 7778500702764032671}
   - component: {fileID: 2079672691082155420}
   m_Layer: 0
-  m_Name: ServalQuiSauteDroite
+  m_Name: ServalQuiSauteGauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
