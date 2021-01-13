@@ -21,9 +21,17 @@ namespace TrioLLL
             public GameObject Face;
             public GameObject Dos;
             public AudioClip footPrints;
+            public AudioClip boom;
+            public AudioClip splatter;
+            public float footPrintVolume =1f;
+            public float boomVolume =1f;
+            public float splatterVolume =1f;
             public TrioLLL.Cannonballs.Soundmanager Audiomanager;
             private TrioLLL.Cannonballs.Gabarits[] gabarits;
             private bool hasExploded = false;
+            private bool footprintOn = false;
+            private bool horizontal0;
+            private bool vertical0;
 
             public override void Start()
             {
@@ -45,10 +53,15 @@ namespace TrioLLL
                 }
                 if (Tick >= 7)
                 {
+
                     rb.velocity = new Vector2(0, 0);
-                    
+                   
                     foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)
                     {
+                        if (hasExploded == false)
+                        {
+                            Audiomanager.PlaySFX(boom, boomVolume);
+                        }
                         if (!gabarit.isPlayerOut && !hasExploded)
                         {
                             Face.SetActive(true);
@@ -57,8 +70,10 @@ namespace TrioLLL
                             Debug.Log(Tick);
                             animator.SetBool("Boom", true);
                             hasExploded = true;
+                            Audiomanager.PlaySFX(splatter, splatterVolume);
                         }
                     }
+
                 }
 
 
@@ -74,34 +89,63 @@ namespace TrioLLL
                 float inputHorizontal = Input.GetAxis("Left_Joystick_X");
                 float inputVertical = Input.GetAxis("Left_Joystick_Y");
                 rb.velocity = new Vector2(inputHorizontal, inputVertical).normalized * (speed * speedModifier);
-
+                //animations
                 if (inputVertical > 0)
                 {
+
                     Dos.SetActive(true);
                     Face.SetActive(false);
                     animator.SetBool("RunNorth", true);
                     animator.SetBool("RunSouth", false);
                     animator.SetBool("Immobile", false);
-                    Audiomanager.PlayFootPrints(footPrints);
+
                 }
                 if (inputVertical <= 0)
                 {
+
                     Face.SetActive(true);
                     Dos.SetActive(false);
                     animator.SetBool("RunNorth",false);
                     animator.SetBool("RunSouth",true);
                     animator.SetBool("Immobile",false);
-                    Audiomanager.PlayFootPrints(footPrints);
+
+
                 }
                 if (inputVertical == 0 && inputVertical == 0)
                 {
+
                     Face.SetActive(true);
                     Dos.SetActive(false);
                     animator.SetBool("Immobile",true);
                     animator.SetBool("RunNorth", false);
                     animator.SetBool("RunSouth", false);
-                    Audiomanager.StopFootPrints();
+                    
                 }
+                //sons
+                if (inputVertical != 0 || inputHorizontal !=0)
+                {
+                    if(inputVertical <= 0) 
+                    {
+                        Face.SetActive(true);
+                        Dos.SetActive(false);
+                        animator.SetBool("RunNorth", false);
+                        animator.SetBool("RunSouth", true);
+                        animator.SetBool("Immobile", false);
+                    }
+
+                    if (footprintOn == false)
+                    {
+                        StartCoroutine("FootPrints");
+                        footprintOn = true;
+                    }
+                }
+
+            }
+            IEnumerator FootPrints()
+            {
+                Audiomanager.PlayFootPrints(footPrints,footPrintVolume);
+                yield return new WaitForSeconds(0.3f);
+                footprintOn = false;
             }
 
         }

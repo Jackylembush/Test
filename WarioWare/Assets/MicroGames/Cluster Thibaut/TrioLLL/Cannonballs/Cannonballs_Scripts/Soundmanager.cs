@@ -29,8 +29,9 @@ namespace TrioLLL
                 // loop les musiques
                 musicSource.loop = true;
                 musicSource2.loop = true;
-                
-                PlayMusic(musiqueSpeed1);
+                sfxSource.loop = true;
+
+                //PlayMusic(musiqueSpeed1);
             }
 
             //FixedUpdate is called on a fixed time.
@@ -52,17 +53,12 @@ namespace TrioLLL
                 musicSource.clip = musicClip;
                 musicSource.Play();
             }
-            public void PlayFootPrints(AudioClip musicClip)
+            public void PlayFootPrints(AudioClip clip,float volume)
             {
-                musicSource2.clip = musicClip;
-                musicSource2.Play();
+                musicSource2.PlayOneShot(clip,volume);
                 
             }
-            public void StopFootPrints()
-            {
-                musicSource2.Stop();
 
-            }
 
             public void PlaySFX(AudioClip clip, float volume)
             {
