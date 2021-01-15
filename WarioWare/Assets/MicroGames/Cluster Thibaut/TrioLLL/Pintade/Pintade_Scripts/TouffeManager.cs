@@ -20,6 +20,7 @@ namespace TrioLLL
             public GameObject pintadePatch;
             public GameObject animalsParent;
             public GameObject manager;
+            public GameObject soundManager;
             public int side;
 
             [HideInInspector] public int choice;
@@ -55,35 +56,54 @@ namespace TrioLLL
                 switch (currentDifficulty)
                 {
                     case Difficulty.EASY:
-                        if (Tick == 5)
+                        if (Tick == 4)
                         {
                             if (pintadeON == true)
                             {
                                 animalsParent.SetActive(true);
                                 pintade.SetActive(true);
+                                soundManager.GetComponent<PintadeSoundManager>().pintade = true;
                             }
                             else if (frogON == true)
                             {
                                 animalsParent.SetActive(true);
                                 frog.SetActive(true);
+                                if (side == 0)
+                                {
+                                    soundManager.GetComponent<PintadeSoundManager>().frog1 = true;
+                                }
+                                else if (side == 1)
+                                {
+                                    soundManager.GetComponent<PintadeSoundManager>().frog2 = true;
+                                }
+                                
                             }
                         }
                         break;
 
                     case Difficulty.MEDIUM:
-                        if (Tick == 5)
+                        if (Tick == 4)
                         {
                             if (pintadeON == true)
                             {
                                 animalsParent.SetActive(true);
                                 pintade.SetActive(true);
                                 pintadeHat.SetActive(true);
+                                soundManager.GetComponent<PintadeSoundManager>().pintade = true;
                             }
                             else if (frogON == true)
                             {
                                 animalsParent.SetActive(true);
                                 frog.SetActive(true);
                                 frogHat.SetActive(true);
+                                if (side == 0)
+                                {
+                                    soundManager.GetComponent<PintadeSoundManager>().frog1 = true;
+                                }
+                                else if (side == 1)
+                                {
+                                    soundManager.GetComponent<PintadeSoundManager>().frog2 = true;
+                                }
                             }
                         }
                         break;
@@ -91,7 +111,7 @@ namespace TrioLLL
                     case Difficulty.HARD:
                         if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick == 4)
+                            if (Tick == 3)
                             {
                                 if (pintadeON == true)
                                 {
@@ -99,6 +119,7 @@ namespace TrioLLL
                                     pintade.SetActive(true);
                                     pintadeHat.SetActive(true);
                                     pintadePatch.SetActive(true);
+                                    soundManager.GetComponent<PintadeSoundManager>().pintade = true;
                                 }
                                 else if (frogON == true)
                                 {
@@ -106,12 +127,20 @@ namespace TrioLLL
                                     frog.SetActive(true);
                                     frogHat.SetActive(true);
                                     frogPatch.SetActive(true);
+                                    if (side == 0)
+                                    {
+                                        soundManager.GetComponent<PintadeSoundManager>().frog1 = true;
+                                    }
+                                    else if (side == 1)
+                                    {
+                                        soundManager.GetComponent<PintadeSoundManager>().frog2 = true;
+                                    }
                                 }
                             }
                         }
                         else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick == 6)
+                            if (Tick == 5)
                             {
                                 if (pintadeON == true)
                                 {
@@ -119,6 +148,7 @@ namespace TrioLLL
                                     pintade.SetActive(true);
                                     pintadeHat.SetActive(true);
                                     pintadePatch.SetActive(true);
+                                    soundManager.GetComponent<PintadeSoundManager>().pintade = true;
                                 }
                                 else if (frogON == true)
                                 {
@@ -126,22 +156,18 @@ namespace TrioLLL
                                     frog.SetActive(true);
                                     frogHat.SetActive(true);
                                     frogPatch.SetActive(true);
+                                    if (side == 0)
+                                    {
+                                        soundManager.GetComponent<PintadeSoundManager>().frog1 = true;
+                                    }
+                                    else if (side == 1)
+                                    {
+                                        soundManager.GetComponent<PintadeSoundManager>().frog2 = true;
+                                    }
                                 }
                             }
                         }
                         break;
-                }
-
-                if (Tick == 6)
-                {
-                    if (pintadeON == true)
-                    {
-                        Debug.Log("pintadeON");
-                    }
-                    if (frogON == true)
-                    {
-                        Debug.Log("frogON");
-                    }
                 }
             }
         }

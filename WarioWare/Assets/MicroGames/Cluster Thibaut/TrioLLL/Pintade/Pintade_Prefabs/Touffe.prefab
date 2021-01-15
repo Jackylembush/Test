@@ -343,6 +343,7 @@ MonoBehaviour:
   pintadePatch: {fileID: 2800546830687022689}
   animalsParent: {fileID: 7817999243805432107}
   manager: {fileID: 0}
+  soundManager: {fileID: 0}
   side: 0
   choice: 0
   pintadeON: 0

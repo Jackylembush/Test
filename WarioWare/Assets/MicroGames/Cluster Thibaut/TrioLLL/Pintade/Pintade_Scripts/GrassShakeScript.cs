@@ -17,6 +17,7 @@ namespace TrioLLL
             public float duration;
             public GameObject touffeParent;
             public GameObject manager;
+            public GameObject soundManager;
             private int side;
 
             public override void Start()
@@ -40,14 +41,14 @@ namespace TrioLLL
                 switch (currentDifficulty)  //Shake des Touffes.
                 {
                     case Difficulty.EASY:
-                        if (Tick <= 4)
+                        if (Tick <= 3)
                         {
                             StartCoroutine(Shake(magnitude, duration));
                         }
                         break;
 
                     case Difficulty.MEDIUM:
-                        if (Tick <= 4)
+                        if (Tick <= 3)
                         {
                             StartCoroutine(Shake(magnitude, duration));
                         }
@@ -56,14 +57,14 @@ namespace TrioLLL
                     case Difficulty.HARD:
                         if (side == manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick <= 3)
+                            if (Tick <= 2)
                             {
                                 StartCoroutine(Shake(magnitude, duration));
                             }
                         }
                         else if (side != manager.GetComponent<PintadeGlobalManager>().bigChoice)
                         {
-                            if (Tick <= 5)
+                            if (Tick <= 4)
                             {
                                 StartCoroutine(Shake(magnitude, duration));
                             }
@@ -77,6 +78,15 @@ namespace TrioLLL
                 Vector3 originalPos = transform.position;
 
                 float elapsed = 0.0f;
+
+                if (side == 0)
+                {
+                    soundManager.GetComponent<PintadeSoundManager>().grass1 = true;
+                }
+                else if (side == 1)
+                {
+                    soundManager.GetComponent<PintadeSoundManager>().grass2 = true;
+                }
 
                 while (elapsed < duration)
                 {

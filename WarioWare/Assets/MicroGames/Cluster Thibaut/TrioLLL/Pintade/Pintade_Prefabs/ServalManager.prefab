@@ -350,6 +350,9 @@ MonoBehaviour:
   rightAnimalParent: {fileID: 0}
   servalJumpLeft: {fileID: 9143839419636839544}
   servalJumpRight: {fileID: 1842769185174904254}
+  soundManager: {fileID: 0}
+  featherParticle: {fileID: 713230640880333432, guid: 6be8e8e662c24cd4f8f4b329b3eed683,
+    type: 3}
   time: 0.075
 --- !u!1 &4692354297927390297
 GameObject:

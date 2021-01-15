@@ -25,6 +25,10 @@ namespace TrioLLL
             public GameObject rightAnimalParent;
             public GameObject servalJumpLeft;
             public GameObject servalJumpRight;
+            public GameObject soundManager;
+            public GameObject featherParticle;
+            public GameObject rightParticleSpawner;
+            public GameObject leftParticleSpawner;
             public float time;
 
             public override void Start()
@@ -82,48 +86,86 @@ namespace TrioLLL
             {
                 servalBack.SetActive(false);
                 servalJumpLeft.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalAttack = true;
 
                 yield return new WaitForSeconds(time);
 
                 servalJumpLeft.SetActive(false);
-                leftSickServal.SetActive(true);
                 leftAnimalParent.SetActive(false);
+
+                yield return new WaitForSeconds(0.15f);
+
+                soundManager.GetComponent<PintadeSoundManager>().frogDeath = true;
+
+                yield return new WaitForSeconds(0.25f);
+
+                leftSickServal.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalPuke = true;
             }
 
             IEnumerator HappyLeft ()
             {
                 servalBack.SetActive(false);
                 servalJumpLeft.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalAttack = true;
 
                 yield return new WaitForSeconds(time);
 
                 servalJumpLeft.SetActive(false);
-                leftHappyServal.SetActive(true);
                 leftAnimalParent.SetActive(false);
+                Instantiate(featherParticle, leftParticleSpawner.transform);
+
+                yield return new WaitForSeconds(0.15f);
+
+                soundManager.GetComponent<PintadeSoundManager>().pintadeDeath = true;
+
+                yield return new WaitForSeconds(0.25f);
+
+                leftHappyServal.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalHappy = true;
             }
 
             IEnumerator SickRight ()
             {
                 servalBack.SetActive(false);
                 servalJumpRight.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalAttack = true;
 
                 yield return new WaitForSeconds(time);
 
                 servalJumpRight.SetActive(false);
-                rightSickServal.SetActive(true);
                 rightAnimalParent.SetActive(false);
+
+                yield return new WaitForSeconds(0.15f);
+
+                soundManager.GetComponent<PintadeSoundManager>().frogDeath = true;
+
+                yield return new WaitForSeconds(0.25f);
+
+                rightSickServal.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalPuke = true;
             }
 
             IEnumerator HappyRight ()
             {
                 servalBack.SetActive(false);
                 servalJumpRight.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalAttack = true;
 
                 yield return new WaitForSeconds(time);
 
                 servalJumpRight.SetActive(false);
-                rightHappyServal.SetActive(true);
                 rightAnimalParent.SetActive(false);
+                Instantiate(featherParticle, rightParticleSpawner.transform);
+
+                yield return new WaitForSeconds(0.15f);
+
+                soundManager.GetComponent<PintadeSoundManager>().pintadeDeath = true;
+
+                yield return new WaitForSeconds(0.25f);
+
+                rightHappyServal.SetActive(true);
+                soundManager.GetComponent<PintadeSoundManager>().servalHappy = true;
             }
         }
     }
