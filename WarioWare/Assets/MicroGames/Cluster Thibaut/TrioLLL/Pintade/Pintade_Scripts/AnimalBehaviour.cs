@@ -11,8 +11,6 @@ namespace TrioLLL
         /// </summary>
         public class AnimalBehaviour : TimedBehaviour
         {
-            public float standSpeed;
-            public float standTime;
             private bool jumped;
             public GameObject leafParticles;
 
@@ -38,6 +36,11 @@ namespace TrioLLL
             public override void TimedUpdate()
             {
 
+            }
+
+            public void LeafPop()
+            {
+                Instantiate(leafParticles, transform);
             }
         }
     }

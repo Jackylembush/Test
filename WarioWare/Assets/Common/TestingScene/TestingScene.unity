@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -459,8 +459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idCard: {fileID: 11400000, guid: a00518222164f4641aff9ba037987965, type: 2}
-  bpm: 90
-  currentDifficulty: 2
+  bpm: 120
+  currentDifficulty: 1
   panel: {fileID: 137554992}
   resultText: {fileID: 224949527}
   verbePanel: {fileID: 967534524}

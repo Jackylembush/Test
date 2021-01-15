@@ -22,11 +22,21 @@ namespace TrioLLL
 
             public GameObject leftGrass;
             public GameObject rightGrass;
+            public GameObject rightAnimalParent;
+            public GameObject leftAnimalParent;
+            public GameObject leafParticles;
 
             public GameObject leftArrow;
             public GameObject rightArrow;
 
+            public GameObject leftParticleSpawner;
+            public GameObject rightParticleSpawner;
+
             public GameObject servalManager;
+
+            public GameObject angrySymbol;
+
+            public GameObject soundManager;
 
             [HideInInspector] public bool frogEaten;
             [HideInInspector] public bool pintadeEaten;
@@ -46,6 +56,7 @@ namespace TrioLLL
                 leftInputActivated = false;
                 leftChoice = 10;
                 rightChoice = 10;
+                angrySymbol.SetActive(false);
             }
 
             //FixedUpdate is called on a fixed time.
@@ -216,8 +227,33 @@ namespace TrioLLL
 
                     if (rightGrass.GetComponent<TouffeManager>().pintadeON == true || leftGrass.GetComponent<TouffeManager>().pintadeON == true)
                     {
+                        angrySymbol.SetActive(true);
 
+                        if (leftGrass.GetComponent<TouffeManager>().pintadeON == true)
+                        {
+                            Instantiate(leafParticles, leftParticleSpawner.transform);
+                            soundManager.GetComponent<PintadeSoundManager>().pintade = true;
+                        }
+                        if (leftGrass.GetComponent<TouffeManager>().frogON == true)
+                        {
+                            Instantiate(leafParticles, leftParticleSpawner.transform);
+                            soundManager.GetComponent<PintadeSoundManager>().frog1 = true;
+                        }
+                        if (rightGrass.GetComponent<TouffeManager>().pintadeON == true)
+                        {
+                            Instantiate(leafParticles, rightParticleSpawner.transform);
+                            soundManager.GetComponent<PintadeSoundManager>().pintade = true;
+                        }
+                        if (rightGrass.GetComponent<TouffeManager>().frogON == true)
+                        {
+                            Instantiate(leafParticles, rightParticleSpawner.transform);
+                            soundManager.GetComponent<PintadeSoundManager>().frog2 = true;
+                        }
+
+                        leftAnimalParent.SetActive(false);
+                        rightAnimalParent.SetActive(false);
                     }
+
                 }
 
                 if (Tick == 8)
