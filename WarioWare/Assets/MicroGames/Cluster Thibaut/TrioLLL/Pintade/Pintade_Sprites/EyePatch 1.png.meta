@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 381207e63fa00894ba9757b0644872ad
+guid: 3903f26aed6707f4186fbec6a5aaddd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8646275358094756120
-    second: TouffesDuRespect_0
+      213: 2317521302471965140
+    second: EyePatch 1_0
   - first:
-      213: -6261758449294142820
-    second: TouffesDuRespect_1
+      213: -1237764561240351655
+    second: EyePatch 1_1
   - first:
-      213: -690167104056834818
-    second: TouffesDuRespect_2
+      213: -806147067484794828
+    second: EyePatch 1_2
   - first:
-      213: -7411038197039921146
-    second: TouffesDuRespect_3
+      213: -5980294611677577108
+    second: EyePatch 1_3
   - first:
-      213: 356028479901240560
-    second: TouffesDuRespect_4
+      213: -1020691801161743117
+    second: EyePatch 1_4
   - first:
-      213: -7672838755449264760
-    second: TouffesDuRespect_5
-  - first:
-      213: -131206992105324024
-    second: TouffesDuRespect_6
-  - first:
-      213: 9115584589192301340
-    second: TouffesDuRespect_7
-  - first:
-      213: 937776859725323608
-    second: TouffesDuRespect_8
+      213: 4459658237871020829
+    second: EyePatch 1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,13 +141,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TouffesDuRespect_0
+      name: EyePatch 1_0
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 8230
+        width: 292
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9fd39885d792020800000000000000
+      internalID: 2317521302471965140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyePatch 1_1
+      rect:
+        serializedVersion: 2
+        x: 5110
+        y: 5360
+        width: 3115
+        height: 2874
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c93b380b392dee0800000000000000
+      internalID: -1237764561240351655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyePatch 1_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 3916
-        width: 1459
-        height: 1627
+        y: 5360
+        width: 4
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,125 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8198375d0adbdf770800000000000000
-      internalID: 8646275358094756120
+      spriteID: 43098d5638dffc4f0800000000000000
+      internalID: -806147067484794828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TouffesDuRespect_1
-      rect:
-        serializedVersion: 2
-        x: 1626
-        y: 4104
-        width: 2041
-        height: 1315
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c929588ddd3c919a0800000000000000
-      internalID: -6261758449294142820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TouffesDuRespect_2
-      rect:
-        serializedVersion: 2
-        x: 3700
-        y: 4176
-        width: 1821
-        height: 1376
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef4480feca80c66f0800000000000000
-      internalID: -690167104056834818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TouffesDuRespect_3
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 1921
-        width: 1459
-        height: 1627
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60885907604b62990800000000000000
-      internalID: -7411038197039921146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TouffesDuRespect_4
-      rect:
-        serializedVersion: 2
-        x: 1653
-        y: 2109
-        width: 2041
-        height: 1315
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fc8f62240ed0f400800000000000000
-      internalID: 356028479901240560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TouffesDuRespect_5
-      rect:
-        serializedVersion: 2
-        x: 3727
-        y: 2181
-        width: 1821
-        height: 1376
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 885a89aedc9948590800000000000000
-      internalID: -7672838755449264760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TouffesDuRespect_6
+      name: EyePatch 1_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1459
-        height: 1627
+        width: 3968
+        height: 5133
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802c3839febdd2ef0800000000000000
-      internalID: -131206992105324024
+      spriteID: c6086c25cb9b10da0800000000000000
+      internalID: -5980294611677577108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TouffesDuRespect_7
+      name: EyePatch 1_4
       rect:
         serializedVersion: 2
-        x: 1626
-        y: 188
-        width: 2041
-        height: 1315
+        x: 8221
+        y: 4686
+        width: 4
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1b05de23ef018e70800000000000000
-      internalID: 9115584589192301340
+      spriteID: 3f4c996f636c5d1f0800000000000000
+      internalID: -1020691801161743117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TouffesDuRespect_8
+      name: EyePatch 1_5
       rect:
         serializedVersion: 2
-        x: 3700
-        y: 260
-        width: 1821
-        height: 1376
+        x: 5552
+        y: 0
+        width: 31
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85d528ad517a30d00800000000000000
-      internalID: 937776859725323608
+      spriteID: d1b52fff983e3ed30800000000000000
+      internalID: 4459658237871020829
       vertices: []
       indices: 
       edges: []
@@ -341,7 +269,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 2a69decc17e4ba34ba39dc2ad78c0db0
     internalID: 0
     vertices: []
     indices: 

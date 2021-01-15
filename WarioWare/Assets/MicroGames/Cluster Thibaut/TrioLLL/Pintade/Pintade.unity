@@ -1365,6 +1365,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992167975091128840, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992167975193976198, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992167976101230609, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
         type: 3}
       propertyPath: manager
@@ -1439,6 +1449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TouffeGauche
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845733067167812694, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817999243805432107, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8128881909425296786, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
         type: 3}
@@ -2834,6 +2854,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TouffeDroite
       objectReference: {fileID: 0}
+    - target: {fileID: 6845733067167812694, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817999243805432107, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8128881909425296786, guid: 77d9e9ff0c9e165419a14c8fabcdd1e9,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2909,7 +2939,7 @@ PrefabInstance:
     - target: {fileID: 39341381123060030, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1579271149898948031, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
@@ -2929,7 +2959,7 @@ PrefabInstance:
     - target: {fileID: 3083440051936585838, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3401743222349343095, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
@@ -2984,7 +3014,7 @@ PrefabInstance:
     - target: {fileID: 4072632981523173992, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4692354296401037412, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
@@ -3190,7 +3220,7 @@ PrefabInstance:
     - target: {fileID: 5867992872578851290, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6833152525096739670, guid: 0f325c02572136041b024af1a619bce7,
         type: 3}

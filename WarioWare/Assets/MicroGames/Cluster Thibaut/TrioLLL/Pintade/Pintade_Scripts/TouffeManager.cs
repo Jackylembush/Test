@@ -14,6 +14,10 @@ namespace TrioLLL
         {
             public GameObject frog;
             public GameObject pintade;
+            public GameObject frogHat;
+            public GameObject pintadeHat;
+            public GameObject frogPatch;
+            public GameObject pintadePatch;
             public GameObject animalsParent;
             public GameObject manager;
             public int side;
@@ -73,11 +77,13 @@ namespace TrioLLL
                             {
                                 animalsParent.SetActive(true);
                                 pintade.SetActive(true);
+                                pintadeHat.SetActive(true);
                             }
                             else if (frogON == true)
                             {
                                 animalsParent.SetActive(true);
                                 frog.SetActive(true);
+                                frogHat.SetActive(true);
                             }
                         }
                         break;
@@ -91,11 +97,15 @@ namespace TrioLLL
                                 {
                                     animalsParent.SetActive(true);
                                     pintade.SetActive(true);
+                                    pintadeHat.SetActive(true);
+                                    pintadePatch.SetActive(true);
                                 }
                                 else if (frogON == true)
                                 {
                                     animalsParent.SetActive(true);
                                     frog.SetActive(true);
+                                    frogHat.SetActive(true);
+                                    frogPatch.SetActive(true);
                                 }
                             }
                         }
@@ -107,11 +117,15 @@ namespace TrioLLL
                                 {
                                     animalsParent.SetActive(true);
                                     pintade.SetActive(true);
+                                    pintadeHat.SetActive(true);
+                                    pintadePatch.SetActive(true);
                                 }
                                 else if (frogON == true)
                                 {
                                     animalsParent.SetActive(true);
                                     frog.SetActive(true);
+                                    frogHat.SetActive(true);
+                                    frogPatch.SetActive(true);
                                 }
                             }
                         }
