@@ -52,11 +52,7 @@ namespace TrioLLL
                 {
 
                     rb.velocity = new Vector2(0, 0);
-                    if (hasExploded == false)
-                    {
-                        Audiomanager.PlaySFX(boom, 1);
 
-                    }
                     foreach (TrioLLL.Cannonballs.Gabarits gabarit in gabarits)
                     {
 
@@ -67,9 +63,14 @@ namespace TrioLLL
                             Debug.Log("animation explosion");
                             Debug.Log(Tick);
                             animator.SetBool("Boom", true);
-                            hasExploded = true;
-                            Audiomanager.PlaySFX(splatter,1);
+                            
+                            Audiomanager.PlaySFX(splatter,2);
                         }
+                    }
+                    if (hasExploded == false)
+                    {
+                        Audiomanager.PlaySFX(boom, 1);
+                        hasExploded = true;
                     }
 
 
