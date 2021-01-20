@@ -34,8 +34,7 @@ namespace LLL
                 {
                     currentCatState = Catstate.NEEDY;
                 }
-                canPet = true;
-          
+                canPet = true;          
             }
 
             public override void Start()
@@ -112,7 +111,6 @@ namespace LLL
                         gameObject.GetComponent<SpriteRenderer>().sprite = Angry;
                         //Son de chat pas content
                         break;
-
                 }
             }
 

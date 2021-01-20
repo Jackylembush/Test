@@ -54,6 +54,7 @@ MonoBehaviour:
   Pet: {fileID: -1300683170305082447, guid: 9188d9879ff847940ad7b6b292d3d98e, type: 3}
   Happy: {fileID: -7059849197456504453, guid: 9188d9879ff847940ad7b6b292d3d98e, type: 3}
   Angry: {fileID: -3028121691814140054, guid: 9188d9879ff847940ad7b6b292d3d98e, type: 3}
+  canPet: 0
 --- !u!212 &2372335551166348539
 SpriteRenderer:
   m_ObjectHideFlags: 0
