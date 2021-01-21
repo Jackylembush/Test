@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1812,16 +1812,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1318754839073394911, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c5fc7e76d2d7bb4baf321dc3735a63f, type: 3}
+    - target: {fileID: 1318754839205619682, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d5817dcb4f0e044c9e8f71a5ba626c5, type: 3}
+    - target: {fileID: 1318754839308536033, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c33a7fbe0b563c46b6301952aedc15f, type: 3}
     - target: {fileID: 1318754839891796400, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318754839891796400, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9de5f04fed7a1744986bcfdf90dc725f, type: 3}
+    - target: {fileID: 1318754839918264795, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c5fc7e76d2d7bb4baf321dc3735a63f, type: 3}
+    - target: {fileID: 1318754840046028707, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
         type: 3}
       propertyPath: m_Volume
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1318754840046028707, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.75
-      objectReference: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9de5f04fed7a1744986bcfdf90dc725f, type: 3}
+    - target: {fileID: 1318754840221658822, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3559ef1e9710a0409f29216e6c2bc61, type: 3}
+    - target: {fileID: 1318754840229264400, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4746812748ba0fd4b993419f65d12dee, type: 3}
     - target: {fileID: 1318754840637904225, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1882,6 +1922,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1318754840657189437, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e1b9fd724c61d8b44b49311fe74c4f87, type: 3}
+    - target: {fileID: 1318754840915090421, guid: dd00bf5f948b13b4e8ecbbec6690af3b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 469178a30122d344781c45864220d001, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd00bf5f948b13b4e8ecbbec6690af3b, type: 3}
 --- !u!1001 &4692354298073199054
