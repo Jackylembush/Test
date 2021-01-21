@@ -30,10 +30,10 @@ namespace LLL
             IEnumerator PetTimer(float wait) //Permet au chat de ne pas repasser immédiatement dans l'état Needy (et donc d'éviter le gros spam)
             {
                 yield return new WaitForSeconds(wait);
-                if(currentCatState == Catstate.PET)
+                /*if(currentCatState == Catstate.PET)
                 {
                     currentCatState = Catstate.NEEDY;
-                }
+                }*/
                 canPet = true;          
             }
 
@@ -62,7 +62,7 @@ namespace LLL
             {
                 base.FixedUpdate(); //Do not erase this line!
 
-                if (Input.GetButton("A_Button") && (canPet == true) && (currentCatState == Catstate.NEEDY || currentCatState == Catstate.HAPPY)) //Appuier sur le bouton A augmente le compteur de pat pat et déclenche l'état associé
+                if (Input.GetButton("A_Button") && (canPet == true) && (currentCatState != Catstate.ANGRY)) //Appuier sur le bouton A augmente le compteur de pat pat et déclenche l'état associé
                 {
                     canPet = false;
                     Debug.Log(currentCatState);
@@ -73,7 +73,7 @@ namespace LLL
                     {
                         Debug.Log("Hello There");
                         currentCatState = Catstate.HAPPY;
-                        StartCoroutine(PetTimer(0.5f));
+                        StartCoroutine(PetTimer(0.2f));
                     }
                     else if (PetCounter > PetObjective)
                     {
@@ -82,7 +82,7 @@ namespace LLL
                     else if (PetCounter < PetObjective)
                     {
                         currentCatState = Catstate.PET;
-                        StartCoroutine(PetTimer(0.5f));
+                        StartCoroutine(PetTimer(0.2f));
                     }
                 }
                 switch (currentCatState) //Permet de transitionner entre les différents états du chat
