@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: 370bedce24617024db44e78e9fd01b36
+guid: 0903294251b4cec4388025a1d351bb5e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 113808644018031961
+    second: NEEDY_HAND
+  - first:
+      213: -6859871597657351477
+    second: NEEDY_CAT
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,11 +127,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: NEEDY_HAND
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 715
+        width: 507
+        height: 355
+      alignment: 9
+      pivot: {x: 0.5029735, y: 0.9756176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d4017db54549100800000000000000
+      internalID: 113808644018031961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEEDY_CAT
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 0
+        width: 878
+        height: 798
+      alignment: 9
+      pivot: {x: 0.4296024, y: 0.67191225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca97d88027dcc0a0800000000000000
+      internalID: -6859871597657351477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f39c26cc75b521e438c41865de34d580
     internalID: 0
     vertices: []
     indices: 

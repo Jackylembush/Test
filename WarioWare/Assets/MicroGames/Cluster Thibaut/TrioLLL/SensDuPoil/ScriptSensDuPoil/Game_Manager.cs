@@ -9,7 +9,7 @@ namespace LLL
     {
         public class Game_Manager : TimedBehaviour
         {
-            public enum Catstate { NEEDY, PET, HAPPY, ANGRY} //Les différents états du chat
+            public enum Catstate { IDLE, NEEDY, PET, HAPPY, ANGRY} //Les différents états du chat
 
             [Header("Cat Mood")] //Etat actuel du chat
             Catstate currentCatState;
@@ -20,11 +20,12 @@ namespace LLL
             [Header("Objectif")]
             public int PetObjective; //L'objectif caché de PatPat à atteindre et ne pas dépasser
 
-            public Sprite Needy;
-            public Sprite Pet;
-            public Sprite Happy;
-            public Sprite Angry;
+            public GameObject Hand;
+            public Sprite HandNormal;
+            public Sprite HandPet;
 
+
+            private SpriteRenderer srHand;
             private Animator anim;
 
             public bool canPet;
@@ -32,29 +33,26 @@ namespace LLL
             IEnumerator PetTimer(float wait) //Permet au chat de ne pas repasser immédiatement dans l'état Needy (et donc d'éviter le gros spam)
             {
                 yield return new WaitForSeconds(wait);
-                /*if(currentCatState == Catstate.PET)
-                {
-                    currentCatState = Catstate.NEEDY;
-                }*/
                 canPet = true;          
             }
 
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
-                currentCatState = Catstate.NEEDY;
+                currentCatState = Catstate.IDLE;
                 canPet = true;
                 anim = GetComponent<Animator>();
+                srHand = Hand.GetComponent<SpriteRenderer>();
                 switch (currentDifficulty) //Permet de gérer la difficulté; Le nombre de PatPat requis change à chaque fois. C'est un nombre aléatoire dans une plage déterminée.
                 {
                     case Difficulty.EASY:
-                        PetObjective = Random.Range(3, 5);
-                        break;
-                    case Difficulty.MEDIUM:
                         PetObjective = Random.Range(5, 7);
                         break;
+                    case Difficulty.MEDIUM:
+                        PetObjective = Random.Range(8, 10);
+                        break;
                     case Difficulty.HARD:
-                        PetObjective = Random.Range(7, 10);
+                        PetObjective = Random.Range(11, 13);
                         break;
                 }
             }
@@ -83,8 +81,16 @@ namespace LLL
                     }
                     else if (PetCounter < PetObjective)
                     {
-                        currentCatState = Catstate.PET;
+                        if(PetCounter == 1)
+                        {
+                            currentCatState = Catstate.NEEDY;
+                        }
+                        else
+                        {
+                            currentCatState = Catstate.PET;
+                        }
                         StartCoroutine(PetTimer(0.2f));
+                        anim.Play("Chat_Pet", -1, 0f);
                     }
                 }
 
@@ -93,12 +99,12 @@ namespace LLL
                 switch (currentCatState) //Permet de transitionner entre les différents états du chat
                 {
                     case Catstate.NEEDY: //Le chat réclame des PatPat
-
+                        srHand.sprite = HandNormal;
                         //Afficher les sprites du chat needy
                         break;
 
                     case Catstate.PET: //Le chat reçois des PatPat
-
+                        srHand.sprite = HandPet;
                         Debug.Log(currentCatState);
                         //Afficher les sprites du pat pat
                         //Son de ronron
