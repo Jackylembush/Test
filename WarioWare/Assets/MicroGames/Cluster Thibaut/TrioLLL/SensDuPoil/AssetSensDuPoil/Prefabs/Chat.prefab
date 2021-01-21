@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 113808644018031961, guid: 0903294251b4cec4388025a1d351bb5e, type: 3}
+  m_Sprite: {fileID: -4857046059397790125, guid: 3fa0be94241498048a9fc106c9887678,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,6 +138,8 @@ MonoBehaviour:
   HandNormal: {fileID: 113808644018031961, guid: 0903294251b4cec4388025a1d351bb5e,
     type: 3}
   HandPet: {fileID: -3338499506265424933, guid: cb04ac7f0fbbfd041b4695ed71ff656d,
+    type: 3}
+  HandAngry: {fileID: -4857046059397790125, guid: 3fa0be94241498048a9fc106c9887678,
     type: 3}
   canPet: 0
 --- !u!212 &2372335551166348539

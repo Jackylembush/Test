@@ -23,6 +23,7 @@ namespace LLL
             public GameObject Hand;
             public Sprite HandNormal;
             public Sprite HandPet;
+            public Sprite HandAngry;
 
 
             private SpriteRenderer srHand;
@@ -61,19 +62,22 @@ namespace LLL
             public override void FixedUpdate()
             {
                 base.FixedUpdate(); //Do not erase this line!
+            }
 
-                if (Input.GetButton("A_Button") && (canPet == true) && (currentCatState != Catstate.ANGRY)) //Appuier sur le bouton A augmente le compteur de pat pat et déclenche l'état associé
+            //FixedUpdate is called on a fixed time.
+            public void Update()
+            {
+
+                if (Input.GetButtonDown("A_Button") && (canPet == true) && (currentCatState != Catstate.ANGRY)) //Appuier sur le bouton A augmente le compteur de pat pat et déclenche l'état associé
                 {
                     canPet = false;
-                    Debug.Log(currentCatState);
                     PetCounter++;
 
 
                     if (PetCounter == PetObjective) //Détermine si l'objectif est atteint ou dépassé
                     {
-                        Debug.Log("Hello There");
                         currentCatState = Catstate.HAPPY;
-                        StartCoroutine(PetTimer(0.2f));
+                        StartCoroutine(PetTimer(0.1f));
                     }
                     else if (PetCounter > PetObjective)
                     {
@@ -88,16 +92,19 @@ namespace LLL
                         else
                         {
                             currentCatState = Catstate.PET;
+                            anim.Play("Chat_Pet", -1, 0f);
                         }
-                        StartCoroutine(PetTimer(0.2f));
-                        anim.Play("Chat_Pet", -1, 0f);
+                        StartCoroutine(PetTimer(0.1f));
                     }
+                    Debug.Log(PetCounter);
                 }
-
                 anim.SetInteger("State", (int)currentCatState);
 
                 switch (currentCatState) //Permet de transitionner entre les différents états du chat
                 {
+                    case Catstate.IDLE:
+                        srHand.sprite = HandNormal;
+                        break;
                     case Catstate.NEEDY: //Le chat réclame des PatPat
                         srHand.sprite = HandNormal;
                         //Afficher les sprites du chat needy
@@ -105,18 +112,16 @@ namespace LLL
 
                     case Catstate.PET: //Le chat reçois des PatPat
                         srHand.sprite = HandPet;
-                        Debug.Log(currentCatState);
                         //Afficher les sprites du pat pat
                         //Son de ronron
                         break;
 
                     case Catstate.HAPPY: //Le chat est heureux
-                        Debug.Log(currentCatState);
                         //Son de chat content
                         break;
 
                     case Catstate.ANGRY: //Le chat a recu trop de PatPat
-
+                        srHand.sprite = HandAngry;
                         //Son de chat pas content
                         break;
                 }
