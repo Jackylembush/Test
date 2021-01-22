@@ -24,6 +24,8 @@ namespace LLL
             public Sprite HandNormal;
             public Sprite HandPet;
             public Sprite HandAngry;
+            public GameObject heartParticle;
+            private List<GameObject> heartObjects;
 
 
             private SpriteRenderer srHand;
@@ -40,6 +42,7 @@ namespace LLL
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
+                heartObjects = new List<GameObject>();
                 currentCatState = Catstate.IDLE;
                 canPet = true;
                 anim = GetComponent<Animator>();
@@ -82,9 +85,15 @@ namespace LLL
                     else if (PetCounter > PetObjective)
                     {
                         currentCatState = Catstate.ANGRY;
+                        for (int i = heartObjects.Count - 1; i >= 0; i--)
+                        {
+                            Destroy(heartObjects[i]);
+                        }
                     }
                     else if (PetCounter < PetObjective)
                     {
+                        heartObjects.Add(Instantiate(heartParticle));
+
                         if(PetCounter == 1)
                         {
                             currentCatState = Catstate.NEEDY;
