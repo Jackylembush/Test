@@ -24,6 +24,15 @@ namespace LLL
             public Sprite HandNormal;
             public Sprite HandPet;
             public Sprite HandAngry;
+            public AudioClip CatAsking;
+            public AudioClip CatAttack;
+            public AudioClip CatDisapointed;
+            public AudioClip CatPurr;
+            public AudioClip Fail;
+            public AudioClip HumanYell;
+            public AudioClip Validation;
+            public AudioClip LittleValidation;
+            public TrioLLL.SensDuPoil.SoundManager Audiomanager;
 
 
             private SpriteRenderer srHand;
@@ -56,6 +65,7 @@ namespace LLL
                         PetObjective = Random.Range(11, 13);
                         break;
                 }
+                Audiomanager.PlaySFX(CatDisapointed, 1);
             }
 
             //FixedUpdate is called on a fixed time.
@@ -77,11 +87,16 @@ namespace LLL
                     if (PetCounter == PetObjective) //Détermine si l'objectif est atteint ou dépassé
                     {
                         currentCatState = Catstate.HAPPY;
+                        Audiomanager.PlaySFX(CatAsking, 1);
+                        Audiomanager.PlaySFX2(Validation, 1);
                         StartCoroutine(PetTimer(0.1f));
                     }
                     else if (PetCounter > PetObjective)
                     {
-                        currentCatState = Catstate.ANGRY;
+                        currentCatState = Catstate.ANGRY; 
+                        Audiomanager.PlaySFX(CatAttack, 1);
+                        Audiomanager.PlaySFX2(HumanYell, 1);
+                        Audiomanager.PlaySFX(Fail, 1);
                     }
                     else if (PetCounter < PetObjective)
                     {
@@ -93,6 +108,8 @@ namespace LLL
                         {
                             currentCatState = Catstate.PET;
                             anim.Play("Chat_Pet", -1, 0f);
+                            Audiomanager.PlaySFX(CatPurr, 3);
+                            Audiomanager.PlaySFX2(LittleValidation, 2);
                         }
                         StartCoroutine(PetTimer(0.1f));
                     }
@@ -119,7 +136,6 @@ namespace LLL
                     case Catstate.HAPPY: //Le chat est heureux
                         //Son de chat content
                         break;
-
                     case Catstate.ANGRY: //Le chat a recu trop de PatPat
                         srHand.sprite = HandAngry;
                         //Son de chat pas content
@@ -137,6 +153,10 @@ namespace LLL
                         bool win = true;
                         Debug.Log("win");
                         Manager.Instance.Result(win);
+                    }
+                    else if (currentCatState == Catstate.PET || currentCatState == Catstate.IDLE || currentCatState == Catstate.NEEDY)
+                    {
+                        Audiomanager.PlaySFX(Fail, 1);
                     }
                 }
             }
