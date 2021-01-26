@@ -48,7 +48,7 @@ namespace TrioLLL
                 {
                     Move();
                 }
-                if (Tick >= 7)
+                if (Tick == 7)
                 {
 
                     rb.velocity = new Vector2(0, 0);
