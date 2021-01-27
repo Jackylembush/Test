@@ -411,6 +411,86 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1001 &489808625
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892696, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892697, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211083675681892699, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+        type: 3}
+      propertyPath: m_Name
+      value: Etoile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59aca66be67e1da4ebdec5fc2873aa40, type: 3}
+--- !u!198 &489808626 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5211083675681892697, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+    type: 3}
+  m_PrefabInstance: {fileID: 489808625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1019998007
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +1036,36 @@ PrefabInstance:
       propertyPath: hbfill
       value: 
       objectReference: {fileID: 316047259}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: victoryParticle
+      value: 
+      objectReference: {fileID: 489808626}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: angryBgColor.r
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: angryBgColor.g
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: angryBgColor.b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: angryBgColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372335551166348537, guid: e2a3e6797e8b6d947a42caea63c27568,
+        type: 3}
+      propertyPath: spriteBg
+      value: 
+      objectReference: {fileID: 1320798396}
     - target: {fileID: 2372335551166348542, guid: e2a3e6797e8b6d947a42caea63c27568,
         type: 3}
       propertyPath: m_Name

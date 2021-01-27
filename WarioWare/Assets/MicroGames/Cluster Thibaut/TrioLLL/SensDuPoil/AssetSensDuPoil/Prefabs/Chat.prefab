@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1951159473
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 113808644018031961, guid: 0903294251b4cec4388025a1d351bb5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,6 +151,8 @@ MonoBehaviour:
   Audiomanager: {fileID: 0}
   heartParticle: {fileID: 4186352826466223391, guid: 540b9bd9aeb9ff04180aebbb73dfac12,
     type: 3}
+  victoryParticle: {fileID: 5211083675681892699, guid: 59aca66be67e1da4ebdec5fc2873aa40,
+    type: 3}
   slider: {fileID: 0}
   healthbar: {fileID: 0}
   hbfill: {fileID: 0}
@@ -191,8 +193,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1951159473
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -6859871597657351477, guid: 0903294251b4cec4388025a1d351bb5e,
     type: 3}
