@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Testing;
+using Caps;
 
 namespace LLL
 {
@@ -42,7 +42,7 @@ namespace LLL
             public Slider slider;
             public GameObject healthbar;
             public Image hbfill;
-
+            public float[] petCD;
             private SpriteRenderer srHand;
             private Animator anim;
 
@@ -55,11 +55,9 @@ namespace LLL
             }
             IEnumerator AnticipatedWin(float winwait)
             {
-                Debug.Log("VICTOIRE1");
                 yield return new WaitForSeconds(winwait);
                 if (currentCatState == Catstate.HAPPY)
                 {
-                    Debug.Log("VICTOIRE");
                     Audiomanager.PlaySFX2(Validation, 1);
                     canPet = false;
                     victoryParticle.Play();
@@ -88,13 +86,21 @@ namespace LLL
                 switch (currentDifficulty) //Permet de gérer la difficulté; Le nombre de PatPat requis change à chaque fois. C'est un nombre aléatoire dans une plage déterminée.
                 {
                     case Difficulty.EASY:
-                        PetObjective = Random.Range(12, 14);
+                        PetObjective = Random.Range(15,16);
+                        /*switch (bpm)
+                        {
+                            case 60:
+                                PetObjective = Mathf.FloorToInt(PetObjective * 1.2f);
+                                break;
+                            default:
+                                break;
+                        }*/
                         break;
                     case Difficulty.MEDIUM:
-                        PetObjective = Random.Range(15, 17);
+                        PetObjective = Random.Range(19,20);
                         break;
                     case Difficulty.HARD:
-                        PetObjective = Random.Range(18, 20);
+                        PetObjective = Random.Range(22,23);
                         break;
                 }
                 Audiomanager.PlaySFX(CatDisapointed, 1);
@@ -120,7 +126,7 @@ namespace LLL
                     {
                             currentCatState = Catstate.HAPPY;
                             Audiomanager.PlaySFX(CatAsking, 1);
-                            StartCoroutine(PetTimer(0.1f));
+                            StartCoroutine(PetTimer(petCD[(int)currentDifficulty]));
                             StartCoroutine(AnticipatedWin(1.5f * 60 / bpm));
                     }
                     else if (PetCounter > PetObjective)
@@ -152,7 +158,7 @@ namespace LLL
                             Audiomanager.PlaySFX(CatPurr, 10);
                             Audiomanager.PlaySFX2(LittleValidation, 2);
                         }
-                        StartCoroutine(PetTimer(0.1f));
+                        StartCoroutine(PetTimer(0.05f));
                     }
                 }
                 anim.SetInteger("State", (int)currentCatState);
