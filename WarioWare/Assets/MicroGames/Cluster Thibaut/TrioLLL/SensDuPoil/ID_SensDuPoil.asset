@@ -15,7 +15,7 @@ MonoBehaviour:
   cluster: 2
   trio: LLL
   indexEnum: 0
-  verbe: PET THE CAT
+  verbe: Caresse le chat!
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 93f2efa409b739b49bdab475c109b82f, type: 3}
     required: 0

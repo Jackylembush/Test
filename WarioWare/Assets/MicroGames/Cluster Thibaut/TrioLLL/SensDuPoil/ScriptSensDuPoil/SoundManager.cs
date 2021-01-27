@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace TrioLLL
 {
@@ -12,12 +13,13 @@ namespace TrioLLL
 //            public AudioSource musicSource;
             public AudioSource sfxSource;
             public AudioSource sfxSource2;
+            public AudioSource musicSource;
 
             #endregion
-/*            public AudioClip musiqueSpeed1;
+            public AudioClip musiqueSpeed1;
             public AudioClip musiqueSpeed2;
             public AudioClip musiqueSpeed3;
-            public AudioClip musiqueSpeed4;*/
+            public AudioClip musiqueSpeed4;
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
@@ -25,14 +27,30 @@ namespace TrioLLL
                 //créer les audiosources
 
 
- /*               Debug.Log(musicSource);
                 // loop les musiques
                 musicSource.loop = true;
-                musicSource2.loop = true;*/
-    //            sfxSource.loop = true;
+                //            sfxSource.loop = true;
 
                 //PlayMusic(musiqueSpeed1);
- /*               if (bpm == 60)
+                if (Manager.Instance.bpm == BPM.Slow)
+                {
+                    PlayMusic(musiqueSpeed1);
+
+                }
+                else if (Manager.Instance.bpm == BPM.Medium)
+                {
+                    PlayMusic(musiqueSpeed2);
+                }
+                else if (Manager.Instance.bpm == BPM.Fast)
+                {
+                    PlayMusic(musiqueSpeed3);
+                }
+                else if (Manager.Instance.bpm == BPM.SuperFast)
+                {
+                    PlayMusic(musiqueSpeed4);
+                }
+
+               /* if (bpm == 60)
                 {
                     PlayMusic(musiqueSpeed1);
 
@@ -68,8 +86,8 @@ namespace TrioLLL
             {
                 //Debug.Log(musicClip);
                 //Debug.Log(musicSource);
-/*                musicSource.clip = musicClip;
-                musicSource.Play();*/
+                musicSource.clip = musicClip;
+                musicSource.Play();
             }
 
             public void PlaySFX(AudioClip clip, float volume)
