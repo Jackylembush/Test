@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Testing;
+using Caps;
 
 namespace LLL
 {
@@ -73,13 +73,13 @@ namespace LLL
                 switch (currentDifficulty) //Permet de gérer la difficulté; Le nombre de PatPat requis change à chaque fois. C'est un nombre aléatoire dans une plage déterminée.
                 {
                     case Difficulty.EASY:
-                        PetObjective = Random.Range(10, 12);
+                        PetObjective = Random.Range(12, 14);
                         break;
                     case Difficulty.MEDIUM:
-                        PetObjective = Random.Range(13, 15);
+                        PetObjective = Random.Range(15, 17);
                         break;
                     case Difficulty.HARD:
-                        PetObjective = Random.Range(15, 17);
+                        PetObjective = Random.Range(18, 20);
                         break;
                 }
                 Audiomanager.PlaySFX(CatDisapointed, 1);
@@ -113,7 +113,7 @@ namespace LLL
                     {
                         currentCatState = Catstate.ANGRY; 
                         Audiomanager.PlaySFX(CatAttack, 1);
-                        Audiomanager.PlaySFX2(HumanYell, 1);
+                        Audiomanager.PlaySFX2(HumanYell, 2);
                         Audiomanager.PlaySFX(Fail, 1);
                         currentCatState = Catstate.ANGRY;
                         hbfill.color = Color.red;
@@ -134,7 +134,7 @@ namespace LLL
                         {
                             currentCatState = Catstate.PET;
                             anim.Play("Chat_Pet", -1, 0f);
-                            Audiomanager.PlaySFX(CatPurr, 5);
+                            Audiomanager.PlaySFX(CatPurr, 10);
                             Audiomanager.PlaySFX2(LittleValidation, 2);
                         }
                         StartCoroutine(PetTimer(0.1f));
@@ -181,6 +181,7 @@ namespace LLL
                     else if (currentCatState == Catstate.PET || currentCatState == Catstate.IDLE || currentCatState == Catstate.NEEDY)
                     {
                         Audiomanager.PlaySFX(Fail, 1);
+                        canPet = false;
                     }
                 }
             }
