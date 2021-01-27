@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Caps;
+using Testing;
 
 namespace LLL
 {
@@ -173,6 +173,7 @@ namespace LLL
             {
                 if (Tick == 8)
                 {
+                    canPet = false;
                     if (currentCatState == Catstate.HAPPY) //Si au dernier tick le chat est dans l'état heureux, c'est gagné
                     {
                         bool win = true;
@@ -181,7 +182,11 @@ namespace LLL
                     else if (currentCatState == Catstate.PET || currentCatState == Catstate.IDLE || currentCatState == Catstate.NEEDY)
                     {
                         Audiomanager.PlaySFX(Fail, 1);
-                        canPet = false;
+                        Manager.Instance.Result(false);
+                    }
+                    else
+                    {
+                        Manager.Instance.Result(false);
                     }
                 }
             }
